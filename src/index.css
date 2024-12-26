@@ -1,0 +1,193 @@
+/* src/index.css */
+:root {
+  --primary-color: #FF5A5F; /* Airbnb red */
+  --secondary-color: #00A699; /* Airbnb teal */
+  --dark-gray: #484848;
+  --light-gray: #767676;
+  --super-light-gray: #f7f7f7;
+  --white: #ffffff;
+  --font-family: 'Circular', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  --shadow-1: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-2: 0 2px 8px rgba(0,0,0,0.15);
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  color: var(--dark-gray);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Common card styles */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-2);
+}
+
+/* Button styles */
+.button {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.button:hover {
+  transform: scale(1.02);
+}
+
+/* Input styles */
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--dark-gray);
+}
+
+/* Navigation styles */
+.nav-link {
+  color: var(--dark-gray);
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+/* Property card specific styles */
+.property-card {
+  position: relative;
+}
+
+.property-image {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.property-info {
+  padding: 16px;
+}
+
+.property-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.property-price {
+  font-size: 16px;
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+/* Search bar styles */
+.search-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #DDDDDD;
+  border-radius: 32px;
+  font-size: 16px;
+  box-shadow: var(--shadow-1);
+}
+
+/* Section headers */
+.section-header {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 48px 0 24px;
+  text-align: center;
+}
+
+/* Footer styles */
+.footer {
+  background: var(--super-light-gray);
+  padding: 48px 0;
+  margin-top: 48px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-section h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.footer-section a {
+  display: block;
+  color: var(--light-gray);
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    padding: 16px;
+  }
+
+  .section-header {
+    font-size: 24px;
+    margin: 32px 0 16px;
+  }
+
+  .search-container {
+    padding: 12px;
+  }
+}
