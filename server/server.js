@@ -1,63 +1,22 @@
 require('dotenv').config();
 const express = require('express');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const adminRoutes = require('./routes/admin');
+const propertyRoutes = require('./routes/property');
+const imageProxyRoutes = require('./routes/imageProxy');
 
-// Initialize app and middleware
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
-// Admin Schema
-const AdminSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-});
+app.use('/api/admin', adminRoutes);
+app.use('/api/properties', propertyRoutes);
+app.use('/api', imageProxyRoutes);
 
-const Admin = mongoose.model('Admin', AdminSchema);
-
-// Middleware to verify JWT
-const verifyToken = (req, res, next) => {
-  const token = req.headers['authorization'];
-  if (!token) return res.status(403).send({ message: 'No token provided.' });
-
-  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) return res.status(401).send({ message: 'Unauthorized.' });
-    req.userId = decoded.id;
-    next();
-  });
-};
-
-// Admin Login Endpoint
-app.post('/api/login', async (req, res) => {
-  const { username, password } = req.body;
-  const admin = await Admin.findOne({ username });
-
-  if (!admin || !bcrypt.compareSync(password, admin.password)) {
-    return res.status(401).send({ message: 'Invalid credentials.' });
-  }
-
-  const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-  res.send({ token });
-});
-
-// Example Protected Endpoint
-app.get('/api/properties', verifyToken, (req, res) => {
-  const properties = [
-    { id: 1, name: 'Luxury Villa', price: '$1,000,000' },
-    { id: 2, name: 'Beach House', price: '$750,000' },
-  ];
-  res.send(properties);
-});
-
-// Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -1,0 +1,60 @@
+/* Footer Styles */
+footer {
+    width: 100%;
+    background-color: #ff385c;
+    padding: 2rem 1rem;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+  
+  footer .grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  footer h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  footer p, footer span, footer div {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    footer .grid-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    footer h4 {
+      text-align: center;
+    }
+  
+    footer a, footer p, footer span {
+      text-align: center;
+    }
+  }
+  

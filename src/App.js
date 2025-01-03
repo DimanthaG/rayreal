@@ -11,11 +11,33 @@ import Footer from './components/Footer/Footer';
 import AdminPage from './components/AdminPage/AdminPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import MortgageCalculator from './components/MortgageCalculator/MortgageCalculator';
-
+import AddPropertyPage from './components/AddPropertyPage/AddPropertyPage';
+import { Navbar, Text, Button } from "@nextui-org/react";
+import { Image } from '@nextui-org/react';
+import image from "./assets/images/RayRealty.svg";
 
 const App = () => {
   return (
     <>
+       <Navbar isBordered variant="floating">
+        <Navbar.Brand>
+        <a href="/">
+          <Image
+              width={120}
+              height={120}
+              src={image}
+              alt="Default Image"
+              css={{ objectFit: 'cover' }}
+          />
+        </a>
+        </Navbar.Brand>
+        <Navbar.Content hideIn="xs">
+          <Navbar.Link href="/listings">Listings</Navbar.Link>
+          <Navbar.Link href="/contact">Contact</Navbar.Link>
+          <Navbar.Link href="/about">About</Navbar.Link>
+        </Navbar.Content>
+        
+      </Navbar>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -28,6 +50,7 @@ const App = () => {
           <Route path="/admin" element={<AdminPage />} /> 
           <Route path="/search" element={<SearchResultsPage />} />
           <Route path="/MortgageCalculator" element={<MortgageCalculator />} />
+          <Route path="/add-property" element={<AddPropertyPage />} />
         </Routes>
       </Router>
       <Footer />
