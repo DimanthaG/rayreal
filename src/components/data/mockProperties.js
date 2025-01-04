@@ -128,8 +128,33 @@ const mockProperties = [
       "https://i.imgur.com/bRVmqoR.jpeg",
     ],
   },
+  {
+    id: "8",
+    name: "Luxury Villa in Thalawathugoda",
+    price: "Rs. 150 Million",
+    description: `A stunning luxury villa located in the serene surroundings of Thalawathugoda, Wikramasinghapura. This property includes:
+    - 24 perches of land
+    - Beautiful modern architecture with premium finishing
+    - Spacious living and dining areas
+    - Luxurious bedrooms with en-suite bathrooms
+    - A private swimming pool
+    - Landscaped garden areas`,
+    address: "Thalawathugoda, Wikramasinghapura, Lake Road",
+    images: [
+      "https://i.imgur.com/gyFbePy.jpeg",
+      "https://i.imgur.com/cXNU7Ji.jpeg",
+      "https://i.imgur.com/SmedZEM.jpeg",
+      "https://i.imgur.com/5f4iYZJ.jpeg",
+      "https://i.imgur.com/Kfy6eGP.jpeg",
+      "https://i.imgur.com/bI9dGsm.jpeg",
+      "https://i.imgur.com/TpxB6ru.jpeg",
+      "https://i.imgur.com/isGotuu.jpeg",
+      "https://i.imgur.com/jj3lFWV.jpeg",
+      "https://i.imgur.com/uX5WZe9.jpeg",
+      "https://i.imgur.com/CWC1qNM.jpeg",
+    ],
+  },
   
-  
-];
+];s
 
 export default mockProperties;

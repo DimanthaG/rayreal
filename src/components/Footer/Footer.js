@@ -7,7 +7,7 @@ const Footer = () => {
     <div
       style={{
         width: '100%',
-        backgroundColor: '#ff385c',
+        backgroundColor: '#4169E1',
         marginTop: '2rem',
         padding: '2rem 0',
         color: '#fff',
