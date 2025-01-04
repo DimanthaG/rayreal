@@ -155,6 +155,6 @@ const mockProperties = [
     ],
   },
   
-];s
+];
 
 export default mockProperties;
