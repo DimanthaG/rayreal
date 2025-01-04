@@ -112,6 +112,23 @@ const mockProperties = [
 
     ],
   },
+  {
+    id: "7",
+    name: "Jaffna Land",
+    price: "1.5 million p.p.",
+    description: `Total extend: 284.142 perches
+  - Prime land in Jaffna, ideal for investment or development
+  - Spacious area with easy access to nearby amenities`,
+    address: "Jaffna",
+    images: [
+      "https://i.imgur.com/l9XyoGE.jpeg", 
+      "https://i.imgur.com/P3kIQPQ.jpeg",
+      "https://i.imgur.com/9hvyzKA.jpeg",
+      "https://i.imgur.com/DPw64jb.jpeg",
+      "https://i.imgur.com/bRVmqoR.jpeg",
+    ],
+  },
+  
   
 ];
 
