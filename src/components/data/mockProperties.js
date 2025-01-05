@@ -75,7 +75,7 @@ const mockProperties = [
   {
     id: "5",
     name: "Land for Sale in Maligathenna",
-    price: "LKR 350,000 per Perch (Negotiable)",
+    price: "LKR 450,000 per Perch (Negotiable)",
     description: `17 perches of land available for sale in Maligathenna:
     - Located in Gurudeniya East with approximate location shown.
     - Ideal for residential purposes or investment.
@@ -93,7 +93,7 @@ const mockProperties = [
   {
     id: "6",
     name: "Land for Sale in Battaramulla",
-    price: "LKR 5.9 Million per Perch",
+    price: "LKR 5.5 Million per Perch",
     description: `11.70 Perches, Prime land available for sale in Battaramulla:
     - Suitable for residential purposes.
     - Located in a peaceful and convenient area.
