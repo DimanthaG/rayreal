@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link as RouterLink } from "react-router-dom";
 import { Link, Container, Text, Button, Spacer } from "@nextui-org/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel styles
@@ -30,6 +30,13 @@ const PropertyDetailsPage = () => {
 
   return (
     <Container className="property-details-page">
+      {/* Back Button */}
+      <RouterLink to="/listings">
+        <Button auto flat>
+          Back to Listings
+        </Button>
+      </RouterLink>
+      <Spacer y={1} />
       {/* Carousel */}
       <div className="carousel-section">
         <Carousel showThumbs={false} autoPlay infiniteLoop>

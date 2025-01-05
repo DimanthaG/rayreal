@@ -12,9 +12,11 @@ import AdminPage from './components/AdminPage/AdminPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import MortgageCalculator from './components/MortgageCalculator/MortgageCalculator';
 import AddPropertyPage from './components/AddPropertyPage/AddPropertyPage';
+import AgentsProfiles from './components/AgentProfilesPage/AgentProfilesPage';
 import { Navbar, Text, Button } from '@nextui-org/react';
 import { Image } from '@nextui-org/react';
 import image from './assets/images/RayRealty.svg';
+import { NativeBuffer } from 'mongoose';
 
 const App = () => {
   return (
@@ -48,6 +50,9 @@ const App = () => {
           <Navbar.CollapseItem>
             <a href="/about">About</a>
           </Navbar.CollapseItem>
+          <Navbar.CollapseItem>
+            <a href="/agents">Agents</a>
+          </Navbar.CollapseItem>
         </Navbar.Collapse>
       </Navbar>
       <Router>
@@ -63,6 +68,7 @@ const App = () => {
           <Route path="/search" element={<SearchResultsPage />} />
           <Route path="/MortgageCalculator" element={<MortgageCalculator />} />
           <Route path="/add-property" element={<AddPropertyPage />} />
+          <Route path="/agents" element={<AgentsProfiles />} />
         </Routes>
       </Router>
       <Footer />
