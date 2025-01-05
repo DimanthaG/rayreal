@@ -35,7 +35,7 @@ const mockAgents = [
       email: "goonewardenadimantha@gmail.com",
       contact: "+14164746869",
       image: "https://i.imgur.com/6ele5Se.png", // Replace with actual image paths
-      describe: "",
+      website: "www.dimanthagoonewardena.com",
     },
   ];
   

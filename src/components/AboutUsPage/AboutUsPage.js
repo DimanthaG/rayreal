@@ -65,6 +65,7 @@ const AboutUsPage = () => {
               flex: '1 1 calc(33.333% - 2rem)', // Ensure three cards per row
               maxWidth: 'calc(33.333% - 2rem)', // Limit width to 33.333%
               textAlign: 'center',
+              cursor: 'pointer',
             }}
           >
             <Card isHoverable>
@@ -82,7 +83,10 @@ const AboutUsPage = () => {
                 <Text>
                   Email: <a href={`mailto:${member.email}`}>{member.email}</a>
                 </Text>
-                <Text>{member.description}</Text>
+                <Text>{member.describe}</Text>
+                <Text>
+                <a href={`mailto:${member.website}`}>{member.website}</a>  
+                </Text>
               </Card.Body>
             </Card>
           </div>
