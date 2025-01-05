@@ -7,12 +7,14 @@ const AboutUsPage = () => {
     <Container>
       {/* Company Mission Section */}
       <Text h1 css={{ textAlign: 'center', marginBottom: '2rem' }}>
-        About Ray Real Estate
+        About RayRealty
       </Text>
       <Text h4 css={{ textAlign: 'center', marginBottom: '2rem' }}>
-        Ray Real Estate, part of the Raytronics Group, is dedicated to helping you find your dream property.
+        RayRealty, part of the Raytronics Group, is a new subdivision of the organization dedicated to helping you find your dream property.
         With years of expertise in real estate, we specialize in residential, commercial, and land properties,
         providing exceptional service and value.
+
+        Raytronics also offers RayMedia and RayEdu, focusing on Social Media/Media marketing and educational services.
       </Text>
 
       {/* Company Overview */}

@@ -34,9 +34,10 @@ const App = () => {
           </a>
         </Navbar.Brand>
         <Navbar.Content hideIn="xs">
+        <Navbar.Link href="/about">About Us</Navbar.Link>
           <Navbar.Link href="/listings">Listings</Navbar.Link>
-          <Navbar.Link href="/contact">Contact</Navbar.Link>
           <Navbar.Link href="/agents">Agents</Navbar.Link>
+          <Navbar.Link href="/contact">Contact Us</Navbar.Link>
         </Navbar.Content>
         {/* Collapse for Mobile Screens */}
         <Navbar.Toggle showIn="xs" />
