@@ -4,6 +4,7 @@ import { NextUIProvider } from '@nextui-org/react';
 import App from './App';
 import './index.css';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const root = ReactDOM.createRoot(document.getElementById('root')); // Initialize React root
 root.render(
@@ -11,6 +12,7 @@ root.render(
     <NextUIProvider>
       <App />
       <Analytics/>
+      <SpeedInsights/>
     </NextUIProvider>
   </React.StrictMode>
 );
