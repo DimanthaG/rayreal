@@ -1,6 +1,6 @@
-// src/components/AboutUsPage/AboutUsPage.js
 import React from 'react';
 import { Container, Grid, Card, Text, Spacer } from '@nextui-org/react';
+import mockTeam from '../data/mockTeam';
 
 const AboutUsPage = () => {
   return (
@@ -10,8 +10,9 @@ const AboutUsPage = () => {
         About Ray Real Estate
       </Text>
       <Text h4 css={{ textAlign: 'center', marginBottom: '2rem' }}>
-        Ray Real Estate, part of the Raytronics Group, is dedicated to helping you find your dream property. 
-        With years of expertise in real estate, we specialize in residential, commercial, and land properties.
+        Ray Real Estate, part of the Raytronics Group, is dedicated to helping you find your dream property.
+        With years of expertise in real estate, we specialize in residential, commercial, and land properties,
+        providing exceptional service and value.
       </Text>
 
       {/* Company Overview */}
@@ -21,8 +22,9 @@ const AboutUsPage = () => {
             <Card.Body>
               <Text h3>Our Mission</Text>
               <Text>
-                At Ray Real Estate, we aim to deliver exceptional service, guiding you through every step of 
-                the property buying or selling process. Our commitment to trust and transparency sets us apart.
+                At Ray Real Estate, we aim to deliver exceptional service, guiding you through every step of
+                the property buying or selling process. Our commitment to trust, transparency, and customer
+                satisfaction sets us apart.
               </Text>
             </Card.Body>
           </Card>
@@ -34,7 +36,8 @@ const AboutUsPage = () => {
               <Text>
                 - Trust and Integrity <br />
                 - Expertise in Real Estate <br />
-                - Customer-Centric Approach
+                - Customer-Centric Approach <br />
+                - Innovation and Sustainability
               </Text>
             </Card.Body>
           </Card>
@@ -45,33 +48,46 @@ const AboutUsPage = () => {
 
       {/* Team Members Section */}
       <Text h2 css={{ textAlign: 'center', marginBottom: '1rem' }}>Meet Our Team</Text>
-      <Grid.Container gap={2}>
-        <Grid xs={12} sm={4}>
-          <Card isHoverable>
-            <Card.Body>
-              <Text h4>Dr. K H Lasantha Gunawardana</Text>
-              <Text>Contact: 0777727527</Text>
-              <Text>Email: <a href="mailto:lasa_ray@yahoo.com">lasa_ray@yahoo.com</a></Text>
-            </Card.Body>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={4}>
-          <Card isHoverable>
-            <Card.Body>
-              <Text h4>Shamika Chandupa</Text>
-              <Text>Contact: +94 (72) 664 5529</Text>
-            </Card.Body>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={4}>
-          <Card isHoverable>
-            <Card.Body>
-              <Text h4>Dan Poddiwela</Text>
-              <Text>Contact: 0(77) 112 5807</Text>
-            </Card.Body>
-          </Card>
-        </Grid>
-      </Grid.Container>
+
+      {/* Adjusted Grid for Team Members */}
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '2rem',
+        }}
+      >
+        {mockTeam.map((member, index) => (
+          <div
+            key={member.id}
+            style={{
+              flex: '1 1 calc(33.333% - 2rem)', // Ensure three cards per row
+              maxWidth: 'calc(33.333% - 2rem)', // Limit width to 33.333%
+              textAlign: 'center',
+            }}
+          >
+            <Card isHoverable>
+              <Card.Image
+                src={member.image}
+                objectFit="cover"
+                width="100%"
+                height={200}
+                alt={member.name}
+                css={{ borderRadius: '10px' }}
+              />
+              <Card.Body>
+                <Text h4>{member.name}</Text>
+                <Text>Contact: {member.contact}</Text>
+                <Text>
+                  Email: <a href={`mailto:${member.email}`}>{member.email}</a>
+                </Text>
+                <Text>{member.description}</Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </div>
 
       <Spacer y={2} />
 
@@ -81,14 +97,13 @@ const AboutUsPage = () => {
         330/08, Saman Mawatha, Lake Road, Borelesgamuwa
       </Text>
       <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4642.265158982494!2d79.91045617566327!3d6.842604393155602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a9b925dae35%3A0x6b0b804d2da025a!2sSaman%20Mawatha%2C%20Boralesgamuwa%2C%20Sri%20Lanka!5e1!3m2!1sen!2sca!4v1736044995629!5m2!1sen!2sca"
         title="Google Maps Location"
-        src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${encodeURIComponent(
-          '330/08, Saman Mawatha, Lake Road, Borelesgamuwa'
-        )}`}
         style={{
           border: 0,
           width: '100%',
           height: '400px',
+          borderRadius: '10px',
         }}
         allowFullScreen
       ></iframe>
