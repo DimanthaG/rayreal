@@ -30,14 +30,13 @@ const PropertyDetailsPage = () => {
 
   return (
     <Container className="property-details-page">
-      {/* Back Button */}
-      <RouterLink to="/listings">
-        <Button auto flat>
-          Back to Listings
-        </Button>
-      </RouterLink>
-      <Spacer y={1} />
-      {/* Carousel */}
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+          <Button auto flat as={RouterLink} to="/listings">
+            Back to Listings
+          </Button>
+        </div>
+        <Spacer y={1} />
+        {/* Carousel */}
       <div className="carousel-section">
         <Carousel showThumbs={false} autoPlay infiniteLoop>
           {property.images.map((url, index) => (
