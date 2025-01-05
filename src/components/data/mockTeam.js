@@ -13,7 +13,7 @@ const mockAgents = [
       id: "2",
       name: "Dan Yabesh Poddiwela",
       specialty: "Realtor",
-      email: "danpoddiwela@gmail.com",
+      email: "danpoddi@gmail.com",
       contact: "+94771125807",
       image: "https://i.imgur.com/2tS1fH7.jpeg", // Replace with actual image paths
       describe: 'Dedicated to providing exceptional service and finding dream homes for clients.',
@@ -23,7 +23,7 @@ const mockAgents = [
       id: "3",
       name: "Shamika Chandupa Manikrathne",
       specialty: "Social Media Strategist",
-      email: "shamikac@gmail.com",
+      email: "s.chandupa2005@gmail.com",
       contact: "+94726645529",
       image: "https://i.imgur.com/Pg3lwxo.jpeg", // Replace with actual image paths
       describe: "Combines graphic design expertise with strategic marketing for impactful campaigns.",

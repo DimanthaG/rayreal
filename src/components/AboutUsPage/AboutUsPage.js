@@ -14,8 +14,8 @@ const AboutUsPage = () => {
         With years of expertise in real estate, we specialize in residential, commercial, and land properties,
         providing exceptional service and value.
 
-        Raytronics also offers RayMedia and RayEdu, focusing on Social Media/Media marketing and educational services.
       </Text>
+      <Text h4>Raytronics also offers RayMedia and RayEdu, focusing on Social Media/Media marketing and educational services.</Text>
 
       {/* Company Overview */}
       <Grid.Container gap={2}>
