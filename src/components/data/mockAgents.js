@@ -1,7 +1,7 @@
 const mockAgents = [
     {
       id: "1",
-      name: "K H Lasantha Goonewardena",
+      name: "Dr. K H Lasantha Goonewardena",
       specialty: "Managing Diretor & Realtor",
       email: "lasa_ray@yahoo.com",
       phone: "+94777727527",
