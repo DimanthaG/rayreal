@@ -9,12 +9,21 @@ const mockProperties = [
       - 50 meters to Jubilee Post, near Naga Viharaya & St. Thomas’ Church.`,
     address: "Mirihana, Nugegoda",
     images: [
-      "https://i.imgur.com/DonHARn.jpeg",
-      "https://imgur.com/RkZVeh0.jpeg",
-      "https://imgur.com/MGaRzbM.jpeg",
-      "https://imgur.com/WKXIZco.jpeg",
-      "https://imgur.com/qDQvSlZ.jpeg",
-      "https://imgur.com/KU9715f.jpeg",
+      "https://i.imgur.com/YRLsNJq.jpeg",
+      "https://i.imgur.com/hL3Yli9.jpeg",
+      "https://i.imgur.com/FakKQEx.jpeg",
+      "https://i.imgur.com/YqbVYQh.jpeg",
+      "https://i.imgur.com/Nhc31Md.jpeg",
+      "https://i.imgur.com/ppCqy4O.jpeg",
+      "https://i.imgur.com/aJF6dUJ.jpeg",
+      "https://i.imgur.com/qsonuca.jpeg",
+      "https://i.imgur.com/I22nD5W.jpeg",
+      "https://i.imgur.com/uJDwHlK.jpeg",
+      "https://i.imgur.com/y02Vqps.jpeg",
+      "https://i.imgur.com/c9yn7PE.jpeg",
+      "https://i.imgur.com/TPm8ip3.jpeg",
+      "https://i.imgur.com/xxCfcsY.jpeg",
+
     ],
   },
   {
@@ -276,6 +285,40 @@ const mockProperties = [
       "https://i.imgur.com/679RP16.jpeg",
       "https://i.imgur.com/Zd4ZnPB.jpeg",
     ],
+  },
+  {
+    "id": "12",
+    "name": "Two-Story House on 27 Perch Land in Gampola, Singha Pitiya",
+    "price": "LKR 24.5 Million",
+    "description": `
+      🏠 House Features:
+      Ground Floor:
+      - 2 Bedrooms
+      - 2 Bathrooms
+      - Garage
+      - Kitchen
+  
+      Upper Floor:
+      - 4 Bedrooms
+      - Living Room
+      - Kitchen
+      - 1 Bathroom
+  
+      🌳 Land Details:
+      - Total Land Size: 27 Perches
+  
+      📍 Location Highlights:
+      - Located in Gampola, Singha Pitiya
+    `,
+    "address": "Gampola, Singha Pitiya",
+    "images": [
+      "https://i.imgur.com/eLJ6M38.jpeg",
+      "https://i.imgur.com/t73KeJL.jpeg",
+      "https://i.imgur.com/09KyxOm.jpeg",
+      "https://i.imgur.com/zxkKb6H.jpeg",
+      "https://i.imgur.com/0GTlSr2.jpeg"
+    ],
+    "contact": "0714727527"
   },
   
   
