@@ -320,7 +320,37 @@ const mockProperties = [
     ],
     "contact": "0714727527"
   },
+  {
+    "id": "13",
+    "name": "Extremely Valuable Property in Maharagama",
+    "price": "Rs. 1.4M per perch (Negotiable)",
+    "description": `
+      🏡 Property Features:
+      - Total Land Size: 108.8 Perches
+      - 20ft Carpeted Road Access
+      - Water and Electricity Available
+      - Single Owner with Clear Titles
   
+      🌍 Location Highlights:
+      - 2.2 Km to Maharagama Town
+      - 1.7 Km to RMV (Department of Motor Traffic)
+      - Suitable for Housing Projects or Apartments
+  
+      ⚠️ Additional Notes:
+      - Includes 3 houses, but sale is based on land value only
+    `,
+    "address": "Maharagama, Sri Lanka",
+    "images": [
+      "https://i.imgur.com/2LR924Y.jpeg",
+      "https://i.imgur.com/Onjm9KN.jpeg",
+      "https://i.imgur.com/vBbEDXF.jpeg",
+      "https://i.imgur.com/VOt7l2r.jpeg",
+      "https://i.imgur.com/R6tWLN3.jpeg",
+      "https://i.imgur.com/ziD1qZI.jpeg"
+
+    ],
+    "contact": "Owner (Phone number to be added)"
+  },
   
   
 ];
