@@ -349,7 +349,30 @@ const mockProperties = [
       "https://i.imgur.com/ziD1qZI.jpeg"
 
     ],
-    "contact": "Owner (Phone number to be added)"
+    "contact": "Owner 0714727527"
+  },
+  {
+    id: "14",
+    name: "Land for Sale near Kottawa Highway Entrance",
+    price: "LKR 2.2 Million per perch (Negotiable)",
+    description: `
+      This land offers two purchasing options: 7.5 perches or 12.5 perches.
+      - The property benefits from a 30-feet wide access road on Kulathunga Mawatha and a 15 feet frontage on the common road.
+      - Situated just 400 meters from High-Level Road, the Makumbura Multimodal Center, and the highway entrance, providing convenient access to bus routes 138, 125, 122, and highway buses to Kadawatha, Kaduwela, Kandy, Galle, and more.
+      - Clear deeds, municipal council approved for the 7.5-perch plot, making it bank-loan eligible.
+    `,
+    address: "Kulathunga Mawatha, near Kottawa Highway Entrance",
+    images: [
+      "https://i.imgur.com/z76ynYr.jpeg",
+      "https://i.imgur.com/mbCJwcb.jpeg",
+      "https://i.imgur.com/hrld0Xo.jpeg",
+      "https://i.imgur.com/114RiFT.jpeg",
+      "https://i.imgur.com/FvoqvKi.jpeg",
+      "https://i.imgur.com/wEOV1Wf.jpeg",
+      "https://i.imgur.com/qJU7ijL.jpeg"
+
+    ],
+    contact: "0714727527"
   },
   
   
