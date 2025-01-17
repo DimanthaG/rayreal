@@ -1,6 +1,40 @@
 const mockProperties = [
   {
     id: "1",
+    name: "Kickstart 2025 with Prime Real Estate Opportunities",
+    price: "Contact for Details",
+    description: `
+      🌟 Welcome to 2025! 🌟
+      Start the year fresh with exciting new opportunities in the real estate market. 🏡✨
+  
+      📢 Now Available for Sale:
+      Discover our latest inventory of stunning properties perfect for your next move or investment. Whether you're seeking a cozy home, a luxurious retreat, or a prime investment opportunity, we have something tailored for you.
+  
+      📍 Why Choose Us?
+      ✅ Expert market insights
+      ✅ Personalized service
+      ✅ Unmatched dedication to finding your perfect fit
+  
+      Don’t wait—contact us today to schedule a viewing or discuss your real estate goals for 2025!
+    `,
+    address: "Contact for Details",
+    images: [
+      "https://i.imgur.com/Wb3PzHx.jpeg",
+      "https://i.imgur.com/Y8wlE9w.jpeg",
+      "https://i.imgur.com/wN73OvU.jpeg",
+      "https://i.imgur.com/EoOK8hd.jpeg",
+      "https://i.imgur.com/UYYxaB4.jpeg",
+      "https://i.imgur.com/x9WOOUi.jpeg",
+
+    ],
+    contact: {
+      phone: "416-895-1010",
+      email: "homes4jeeva@gmail.com"
+    }
+  },
+  
+  {
+    id: "2",
     name: "20 Perch Land with Two-Storied House",
     price: "Rs. 120 Million (Negotiable)",
     description: `20 perch land with a two-storied house (2900 sq.ft) for sale at Mirihana, Nugegoda. 
@@ -27,7 +61,7 @@ const mockProperties = [
     ],
   },
   {
-    id: "2",
+    id: "15",
     name: "5.5 Acres Land in Paiyagala",
     price: "LKR. 80,000 per Perch",
     description: `Spacious 5.5 acres of land located in Paiyagala, Kalutara District:
