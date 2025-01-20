@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Container, Row, Col, Text, Card, Input } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
-import { Search } from 'react-iconly'; // Cool magnifying glass icon
+import { Search } from 'react-iconly';
 import mockProperties from '../data/mockProperties'; // Adjust the path as needed
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [featuredProperties, setFeaturedProperties] = useState([]);
   const navigate = useNavigate();
+
+  // Shuffle and select 6 random properties
+  useEffect(() => {
+    const getRandomProperties = (properties, count) => {
+      const shuffled = [...properties].sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, count);
+    };
+    setFeaturedProperties(getRandomProperties(mockProperties, 6));
+  }, []);
 
   const handleSearch = () => {
     navigate(`/search?q=${searchQuery}`);
@@ -48,7 +58,7 @@ const HomePage = () => {
           justifyContent: 'center',
         }}
       >
-        {mockProperties.map((property, index) => (
+        {featuredProperties.map((property, index) => (
           <Card key={index} isHoverable css={{ maxWidth: '300px', margin: '0 auto' }}>
             <Card.Body css={{ p: 0 }}>
               <Card.Image
@@ -59,11 +69,11 @@ const HomePage = () => {
                 alt={property.name}
               />
             </Card.Body>
-            <Card.Footer css={{ justifyContent: "space-between", flexWrap: "wrap" }}>
-              <Text h4 css={{ marginRight: "auto", fontWeight: "bold" }}>
+            <Card.Footer css={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
+              <Text h4 css={{ marginRight: 'auto', fontWeight: 'bold' }}>
                 {property.name}
               </Text>
-              <Text h5 css={{ color: "$gray700" }}>
+              <Text h5 css={{ color: '$gray700' }}>
                 {property.price}
               </Text>
               <Button color="primary" auto as="a" href={`/property/${property.id}`}>
@@ -75,7 +85,7 @@ const HomePage = () => {
       </div>
 
       {/* No Featured Properties Message */}
-      {mockProperties.length === 0 && (
+      {featuredProperties.length === 0 && (
         <Text h4 css={{ textAlign: 'center', marginTop: '2rem' }}>
           No featured properties at the moment. Check back later!
         </Text>
