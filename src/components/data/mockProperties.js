@@ -408,6 +408,179 @@ const mockProperties = [
     ],
     contact: "0714727527"
   },
+  {
+    id: "13",
+    name: "131-Perch Land with House for Sale in Embilipitiya",
+    price: "LKR 15.5 Million (Negotiable)",
+    description: `
+      A 131-perch plot of land with a house is for sale, located 4 km from the Embilipitiya town on the Embilipitiya-Nonagama main road, in front of Chandrikawawa Sarovaya. This property is situated within the Embilipitiya municipal limits, and the Embilipitiya main schools and hospitals can be reached within 10 minutes.
+  
+      The house includes:
+      - 5 rooms
+      - A kitchen
+      - A living room
+      - A bathroom with full tiling and all other facilities.
+  
+      Value of the house:
+      - LKR 6,000,000
+  
+      Price per perch:
+      - LKR 75,000
+  
+      Total value for the house and entire land:
+      - LKR 15,500,000
+    `,
+    address: "Chandrikawawa Sarovaya, 4 km from Embilipitiya Town, Embilipitiya-Nonagama Main Road",
+    images: [
+      "https://i.imgur.com/P8Hab49.jpeg",
+      "https://i.imgur.com/YyyV0Sv.jpeg",
+      "https://i.imgur.com/3b2gVhA.jpeg"
+    ],
+    contact: {
+      phone: "Contact for Details",
+      email: "Contact for Details"
+    }
+  },
+  {
+    id: "14",
+    name: "120 Perches of Business Property Land in Kalagedihena",
+    price: "Rs. 300 Million (Negotiable)",
+    description: `
+      120 Perches of Valuable business property land located in Kalagedihena, Thihariya, facing the Colombo-Kandy Main Road. 
+      Fully equipped with all facilities, this property is highly suitable for business purposes.
+  
+      Key Features:
+      - Clear deeds
+      - Water and electricity facilities
+      - 120 perches of land
+    `,
+    address: "Kalagedihena, Thihariya, Facing Colombo-Kandy Main Road",
+    images: [
+      "https://i.imgur.com/78lSkJV.jpeg",
+      "https://i.imgur.com/koX6MZn.jpeg",
+      "https://i.imgur.com/ma6CTz1.jpeg",
+      "https://i.imgur.com/x1NPJeI.jpeg",
+      "https://i.imgur.com/Ty9BUuZ.jpeg",
+      "https://i.imgur.com/6NrwiSz.jpeg",
+      "https://i.imgur.com/Nuv86Kw.jpeg",
+      "https://i.imgur.com/jcPxbXy.jpeg",
+      "https://i.imgur.com/62d039j.jpeg"
+    ],
+    contact: {
+      phone: "0714727527",
+      email: "Contact for Details"
+    }
+  },
+  {
+    id: "15",
+    name: "3-Acre Paddy Land on Kekirawa-Thalawa Road",
+    price: "Rs. 90 Million",
+    description: `
+      3-Acre Paddy Land located on Kekirawa-Thalawa Road.
+      - Ideal for agricultural purposes
+      - Currently a harvesting land with ongoing cultivation
+    `,
+    address: "Kekirawa-Thalawa Road",
+    images: [
+      "https://i.imgur.com/JyuZjqx.jpeg",
+      "https://i.imgur.com/Z6772zp.jpeg",
+      "https://i.imgur.com/pseILJu.jpeg",
+      "https://i.imgur.com/eLDBcUe.jpeg",
+      "https://i.imgur.com/asDAT38.jpeg",
+      "https://i.imgur.com/OWYH6H4.jpeg",
+      "https://i.imgur.com/tdC3CWL.jpeg",
+      "https://i.imgur.com/Kf7bGAl.jpeg",
+
+    ],
+    contact: {
+      phone: "Contact for Details",
+      email: "Contact for Details"
+    }
+  },
+  {
+    id: "16",
+    name: "80-Perch Coconut Land on Thalawa Road, Kurunegala",
+    price: "Rs. 16.5 Million (Negotiable)",
+    description: `
+      80-Perch Coconut Land located on Thalawa Road, Kurunegala, facing the main road.
+      
+      Key Features:
+      - Includes a two-room small bungalow
+      - Provides a good income from coconut plantations
+      - Potential for other types of plantations
+    `,
+    address: "Thalawa Road, Kurunegala",
+    images: [
+      "https://i.imgur.com/bb7D6Tq.jpeg",
+      "https://i.imgur.com/CPINKg5.jpeg",
+      "https://i.imgur.com/4Pjf2UB.jpeg",
+      "https://i.imgur.com/AvuD5mQ.jpeg",
+      "https://i.imgur.com/DAbHR6m.jpeg",
+      "https://i.imgur.com/3NTrEES.jpeg",
+
+    ],
+    contact: {
+      phone: "Contact for Details",
+      email: "Contact for Details"
+    }
+  },
+  {
+    id: "17",
+    name: "Two-Story Separate House for Sale in Boralesgamuwa",
+    price: "Contact for Details",
+    description: `
+      🏠 House Features:
+      - **Ground Floor**: 
+        - 2 Rooms, Living Room, Kitchen, Bathroom, and Toilet (No tiles)
+      - **Second Floor**:
+        - 2 Rooms, Living Room, Kitchen, Bathroom, Toilet, and Balcony (Fully tiled)
+      - Parking for 2 vehicles
+      - Located on Liyanage Mawatha with 12-feet road access (New Haven Residence Luxury Houses)
+      - Access via Piriwena Road (20-feet road)
+  
+      🚌 Location Highlights:
+      - 1 Minute (60 meters) to the main road
+      - 1 Minute (70 meters) to the nearest bus stop
+  
+      🏬 Nearby Facilities:
+      1. Cargrills Express: 3 Minutes (90 meters)
+      2. Petrol Station: 2 Minutes (180 meters)
+      3. Sri Jayawardanapura University: 6 Minutes (2.1 km)
+      4. Cancer Hospital: 6 Minutes (2.3 km)
+      5. Kothalawala Defence Hospital: 8 Minutes (3.0 km)
+      6. Police Station: 7 Minutes (550 meters)
+      7. People's Bank: 5 Minutes (350 meters)
+      8. Hatton National Bank: 4 Minutes (320 meters)
+      9. Bank of Ceylon (BOC): 3 Minutes (300 meters)
+      10. Commercial Bank: 8 Minutes (650 meters)
+      11. Arpico Super Market: 4 Minutes (310 meters)
+      12. Laughs Super Market and Gas Station: 6 Minutes (520 meters)
+      13. Boralesgamuwa Play Ground: 4 Minutes (1.4 km)
+      14. Boralesgamuwa School: 4 Minutes (1.2 km)
+  
+      🏙️ Proximity to Towns:
+      - Dehiwala: 15 Minutes (4.1 km)
+      - Wellawatta: 16 Minutes (7.9 km)
+      - Nugegoda: 9 Minutes (3.5 km)
+      - Kohuwala: 10 Minutes (4.6 km)
+      - Maharagama: 6 Minutes (2.4 km)
+      - Bambalapitiya: 20 Minutes (9.5 km)
+    `,
+    address: "Liyanage Mawatha, Boralesgamuwa",
+    images: [
+      "https://i.imgur.com/1vw3UQL.jpeg",
+      "https://i.imgur.com/NL2vtOn.jpeg",
+      "https://i.imgur.com/RQFSUA3.jpeg",
+      "https://i.imgur.com/ZCHBU28.jpeg",
+      "https://i.imgur.com/K8g3Ius.jpeg",
+      
+    ],
+    contact: {
+      phone: "Contact for Details",
+      email: "Contact for Details"
+    }
+  }
+  
   
   
 ];
