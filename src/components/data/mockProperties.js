@@ -409,7 +409,7 @@ const mockProperties = [
     contact: "0714727527"
   },
   {
-    id: "13",
+    id: "15",
     name: "131-Perch Land with House for Sale in Embilipitiya",
     price: "LKR 15.5 Million (Negotiable)",
     description: `
@@ -442,7 +442,7 @@ const mockProperties = [
     }
   },
   {
-    id: "14",
+    id: "16",
     name: "120 Perches of Business Property Land in Kalagedihena",
     price: "Rs. 300 Million (Negotiable)",
     description: `
@@ -472,7 +472,7 @@ const mockProperties = [
     }
   },
   {
-    id: "15",
+    id: "17",
     name: "3-Acre Paddy Land on Kekirawa-Thalawa Road",
     price: "Rs. 90 Million",
     description: `
@@ -498,7 +498,7 @@ const mockProperties = [
     }
   },
   {
-    id: "16",
+    id: "18",
     name: "80-Perch Coconut Land on Thalawa Road, Kurunegala",
     price: "Rs. 16.5 Million (Negotiable)",
     description: `
@@ -525,7 +525,7 @@ const mockProperties = [
     }
   },
   {
-    id: "17",
+    id: "19",
     name: "Two-Story Separate House for Sale in Boralesgamuwa",
     price: "Contact for Details",
     description: `
