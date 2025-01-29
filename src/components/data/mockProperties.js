@@ -579,6 +579,68 @@ const mockProperties = [
       phone: "Contact for Details",
       email: "Contact for Details"
     }
+  },
+  {
+    "id": 20,
+    "name": "Valuable Land in Polgasowita",
+    "location": "Polgasowita, Sri Lanka",
+    "pricePerPerch": "LKR 400,000 (Negotiable)",
+    "marketPricePerPerch": "LKR 550,000",
+    "totalPerches": 80,
+    "description": "This 80-perch land in Polgasowita features 60-75 coconut trees and a small house. The property is ideal for investment, offering a reduced price as the owner is migrating. A great opportunity for residential or agricultural use.",
+    "features": [
+      "80 Perches of Land",
+      "60-75 Coconut Trees",
+      "Includes a Small House",
+      "Good Investment Opportunity"
+    ],
+    "contact": "0714727527",
+    "images": [
+      "https://i.imgur.com/KzbwvLq.jpeg",
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Prime Land for Sale in Boralasgamuwa",
+    "location": "Facing Pirivena Road, Boralasgamuwa, Sri Lanka",
+    "price": "LKR 35,000,000",
+    "pricePerPerch": "LKR 2,500,000 per perch",
+    "totalPerches": 14,
+    "description": "A highly valuable 14-perch land in Boralasgamuwa, fully enclosed with a boundary wall. This property includes an old house with 3 rooms and is equipped with electricity and water. It offers excellent proximity to major roads and city centers.",
+    "features": [
+      "14 Perches (Single Square Plot)",
+      "Fully enclosed with a boundary wall",
+      "Includes an old house with 3 rooms",
+      "Utilities: Electricity & water available",
+      "Clear Freehold Deed (Sole Proprietorship)",
+      "Not a filled-up land",
+      "Located in a highly sought-after area"
+    ],
+    "proximity": [
+      "150m to 120 Colombo-Horana Road",
+      "200m to 119 Dehiwala-Maharagama Road",
+      "1km to Boralasgamuwa Junction",
+      "3km to Maharagama",
+      "4km to Piliyandala",
+      "5km to Dehiwala"
+    ],
+    "nearbyAmenities": [
+      "Walking path nearby for leisure and exercise"
+    ],
+    "contact": {
+      "name": "Property Owner",
+      "phone": "0771282920",
+      "email": "propertyowner@example.com"
+    },
+    "images": [
+      "https://i.imgur.com/dPYdSPz.jpeg",
+      "https://i.imgur.com/qvRLdU8.jpeg",
+      "https://i.imgur.com/whc4Vng.jpeg",
+      "https://i.imgur.com/FJg5u3y.jpeg",
+      "https://i.imgur.com/v68pNNn.jpeg",
+      "https://i.imgur.com/adsUmH5.jpeg",
+    ],
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4642.265158982494!2d79.91045617566327!3d6.842604393155602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a9b925dae35%3A0x6b0b804d2da025a!2sSaman%20Mawatha%2C%20Boralesgamuwa%2C%20Sri%20Lanka!5e1!3m2!1sen!2sca!4v1736044995629!5m2!1sen!2sca"
   }
   
   
