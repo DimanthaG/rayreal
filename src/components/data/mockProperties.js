@@ -641,7 +641,190 @@ const mockProperties = [
       "https://i.imgur.com/adsUmH5.jpeg",
     ],
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4642.265158982494!2d79.91045617566327!3d6.842604393155602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a9b925dae35%3A0x6b0b804d2da025a!2sSaman%20Mawatha%2C%20Boralesgamuwa%2C%20Sri%20Lanka!5e1!3m2!1sen!2sca!4v1736044995629!5m2!1sen!2sca"
-  }
+  },
+  
+    {
+      "id": 22,
+      "name": "Prime Land for Sale in Mirissa Tourist Hub",
+      "location": "Mirissa",
+      "price": "Rs. 250,000 per Perch",
+      "size": "80 Perches",
+      "features": [
+        "Scenic Environment Overlooking a Beautiful Paddy Field",
+        "Clear Deed",
+        "2 km to Mirissa Tourist Zone",
+        "3 km to Galle Road",
+        "800 meters to Mirissa Railway Station",
+        "Ideal for Tourism and Hospitality Ventures"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/4Wre1Qe.jpeg",
+        "https://i.imgur.com/mnEeowp.jpeg",
+        "https://i.imgur.com/ilDtTbb.jpeg",
+        "https://i.imgur.com/2SHyWiS.jpeg",
+
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Luxury 3-Story House for Sale in Battaramulla",
+      "location": "Battaramulla",
+      "price": "LKR 95 Million (Negotiable)",
+      "size": "3,400 sq. ft.",
+      "features": [
+        "6 Bedrooms, 5 Bathrooms (All attached)",
+        "Highly residential area with easy access to supermarkets and schools",
+        "Private 20ft Road",
+        "1.6km to Koswatta, 1.2km to Thalahena"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/eXgAIeU.jpeg",
+        "https://i.imgur.com/qzcne20.jpeg",
+        "https://i.imgur.com/KxvabMI.jpeg",
+        "https://i.imgur.com/pBYPgbO.jpeg",
+
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Exclusive Tourist Hotel for Sale in Embilipitiya",
+      "location": "Embilipitiya",
+      "price": "Negotiable",
+      "size": "1 acre and 36 perches",
+      "features": [
+        "Three-Story Main Building with 15 spacious rooms",
+        "Ground Floor: 2,168.7 sq. ft.",
+        "First Floor: 2,212.73 sq. ft.",
+        "Second Floor: 2,212.73 sq. ft.",
+        "3 Fully Built Cottages – 888 sq. ft. each",
+        "Modern Kitchen – 1,011 sq. ft."
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/v1tHnk1.jpeg",
+        "https://i.imgur.com/v3NADeH.jpeg",
+        "https://i.imgur.com/6CtxWz4.jpeg",
+        "https://i.imgur.com/oyyWztY.jpeg",
+        "https://i.imgur.com/Z9VDWl5.jpeg",
+        "https://i.imgur.com/7lfjhyJ.jpeg",
+        "https://i.imgur.com/99Zf2Tn.jpeg",
+        "https://i.imgur.com/O1Y4nBF.jpeg"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Prime Property for Sale in Hikkaduwa",
+      "location": "Hikkaduwa",
+      "price": "LKR 1.6 Million per Perch",
+      "size": "11.6 Perches",
+      "features": [
+        "Facing Galle-Colombo main road",
+        "Directly across from the Hikkaduwa Police Station",
+        "Nestled within a high-demand tourist area",
+        "Close to the railway station",
+        "Ideal for Hotel, Restaurant, or Cafe"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/pGuAA4p.jpeg",
+        "https://i.imgur.com/IKWQgvp.jpeg",
+        "https://i.imgur.com/LcPWHID.jpeg",
+        "https://i.imgur.com/rWZBPG1.jpeg",
+        "https://i.imgur.com/EfN0uAw.jpeg",
+        "https://i.imgur.com/2Y0MEfb.jpeg",
+        "https://i.imgur.com/fgh1pZr.jpeg", 
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Colonial Type Bungalow for Sale Near Katunayake (Uggalgoda)",
+      "location": "Katunayake",
+      "price": "LKR 23M (Negotiable)",
+      "size": "59 Perches",
+      "features": [
+        "Three-Phase Electricity",
+        "Full Security System with CCTV",
+        "7ft Parapet Wall Surrounding the Property",
+        "4 Bedrooms, 3 Bathrooms",
+        "Large Garage (for 2 vehicles)",
+        "Coconut Trees & Other Fruit Crops"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/GJcTqNu.jpeg",
+        "https://i.imgur.com/Ykg783J.jpeg",
+        "https://i.imgur.com/7wWIt6n.jpeg",
+        "https://i.imgur.com/Nl5bwLG.jpeg",
+        "https://i.imgur.com/Nl5bwLG.jpeg",
+        "https://i.imgur.com/7e0t7uG.jpeg",
+        "https://i.imgur.com/nxJ9IBz.jpeg",
+        "https://i.imgur.com/n9DTWFz.jpeg"
+
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Prime Property for Sale in Malabe Town Center",
+      "location": "Malabe",
+      "price": "LKR 120 Million (Negotiable)",
+      "size": "28 Perches",
+      "features": [
+        "2-story building with 3,000 sq. ft.",
+        "Parking Capacity: 12-15 vehicles",
+        "15 ft wide concrete road, just 40 meters from the Colombo Main Road",
+        "Clear title with bank loan eligibility",
+        "Bank Valuation: LKR 150 million"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/gwGPNB9.jpeg",
+        "https://i.imgur.com/c3OpTDm.jpeg",
+    
+      ]
+    },
+    {
+      "id": 28,
+      "name": "120 Perches of Land in Kiridiwela, Colombo",
+      "location": "Kiridiwela, Colombo",
+      "price": "LKR 100,000 per Perch",
+      "size": "120 Perches",
+      "features": [
+        "Near main bus route in front of Mandawala Maha Vidyalaya",
+        "Adjacent to a beautiful palm plantation",
+        "Water facilities available",
+        "Easily accessible to shops, schools, and hospitals"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/aKEJWgZ.jpeg",
+        "https://i.imgur.com/19qXoHJ.jpeg",
+        "https://i.imgur.com/7xQFFAj.jpeg",
+        "https://i.imgur.com/moqoDDH.jpeg"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Tourist Attraction Property in Dambulla",
+      "location": "Dambulla",
+      "price": "LKR 24 Million (Negotiable)",
+      "size": "3 Acres and 28 Perches",
+      "features": [
+        "Located in one of the most visited tourist areas",
+        "Perfect for investment",
+        "High land value appreciation"
+      ],
+      "contact": "0714727527",
+      "images": [
+        "https://i.imgur.com/kUojn65.jpeg",
+        "https://i.imgur.com/ctKANV4.mp4",
+        "https://i.imgur.com/cmP2cVP.mp4",
+
+        "https://i.imgur.com/VT0wPXu.jpeg"
+      ]
+    }
+
   
   
   
