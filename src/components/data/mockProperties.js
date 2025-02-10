@@ -823,6 +823,119 @@ const mockProperties = [
 
         "https://i.imgur.com/VT0wPXu.jpeg"
       ]
+    },
+    {
+      "id": 30,
+      "name": "Homagama Kahathuduwa Land",
+      "location": "Kahathuduwa, Homagama",
+      "price": "LKR 18.5 Million",
+      "size": "25.6 Perches",
+      "features": [
+        "Spacious plot in a developing area",
+        "Ideal for residential or investment purposes"
+      ],
+      "contact": "+94 71 472 7527",
+      "images": [
+        "https://i.imgur.com/cq0KM5x.jpeg",
+        "https://i.imgur.com/RfDz4mz.jpeg",
+        "https://i.imgur.com/2qRgkaM.jpeg",
+        "https://i.imgur.com/fARbI2r.jpeg",
+        "https://i.imgur.com/oDIGZXb.jpeg",
+        "https://i.imgur.com/YVhqKil.jpeg",
+        "https://i.imgur.com/E0dgZCQ.jpeg",
+        "https://i.imgur.com/Bps1b9e.jpeg",
+        "https://i.imgur.com/DM9Er2l.jpeg",
+        "https://i.imgur.com/CLbmszy.jpeg"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Valuable Land for Sale in Malabe",
+      "location": "Susilarama Road, Malabe",
+      "price": "LKR 1.65 Million per perch (Negotiable)",
+      "size": "40 Perches",
+      "features": [
+        "500 meters to Malabe Town",
+        "500 meters to 170, 190, 177 bus routes",
+        "Highly residential area with rapid development"
+      ],
+      "contact": "+94 71 472 7527",
+      "images": [
+        "https://i.imgur.com/RtORWBO.jpeg",
+        "https://i.imgur.com/uHQTS5X.jpeg",
+        "https://i.imgur.com/y7tNmEL.jpeg",
+        "https://i.imgur.com/GA2rgcL.jpeg",
+
+        "https://i.imgur.com/ayNjqrD.jpeg"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Homagama Town Perch 9.3 Land",
+      "location": "Homagama",
+      "price": "LKR 6.5 Million",
+      "size": "9.3 Perches",
+      "features": [
+        "Flat land near paddy fields with a peaceful environment",
+        "1.2 km to High-Level Road (Pitipana Junction)",
+        "1.8 km to Homagama Town",
+        "2.6 km to Homagama Railway Station",
+        "Access to Keells, Cargills, Arpico within 5 minutes",
+        "Nearby all major banks and financial institutions"
+      ],
+      "contact": "+94 71 472 7527",
+      "images": [
+        "https://i.imgur.com/4lHGmIL.jpeg",
+        "https://i.imgur.com/ukUZal6.jpeg",
+        "https://i.imgur.com/9WZieic.jpeg",
+        "https://i.imgur.com/xq21XTm.jpeg",
+
+        "https://i.imgur.com/wItc0cY.jpeg"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Nittambuwa Ranpokunugama Two-Story House with Land",
+      "location": "Nittambuwa, Ranpokunugama",
+      "price": "LKR 33 Million",
+      "size": "Spacious Residential Property",
+      "features": [
+        "4 Bedrooms",
+        "Living Room, Kitchen, and Dining Area",
+        "2 Bathrooms",
+        "Store Room",
+        "Property fully secured with boundary wall",
+        "500 meters to Attanagalla - Nittambuwa Road",
+        "1.5 km to Nittambuwa Town"
+      ],
+      "contact": "+94 71 472 7527",
+      "images": [
+        "https://i.imgur.com/LodD9tU.jpeg",
+        "https://i.imgur.com/9FgK8Pr.jpeg",
+        "https://i.imgur.com/qUFCvbf.jpeg",
+        "https://i.imgur.com/s913ACO.jpeg",
+        "https://i.imgur.com/2JbCK7L.jpeg",
+        "https://i.imgur.com/fTbXDgN.jpeg"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Hokandara Horahena Residential Land",
+      "location": "Horahena, Hokandara",
+      "price": "LKR 13 Million per perch",
+      "size": "15.5 Perches",
+      "features": [
+        "Includes partially built house with foundation",
+        "All plans approved and provided for free",
+        "Ideal for a new home construction",
+        "Excellent connectivity to Colombo and surrounding towns"
+      ],
+      "contact": "+94 71 472 7527",
+      "images": [
+        "https://i.imgur.com/ceW2Wzd.jpeg",
+        "https://i.imgur.com/0SZUsqy.jpeg",
+        "https://i.imgur.com/coFZVIq.jpeg"
+      ]
     }
 
   
