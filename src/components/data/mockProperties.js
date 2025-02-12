@@ -953,7 +953,7 @@ For more details, visit: www.rayrealtysl.com
   },
   {
     id: "42",
-    name: "Raytronics Group Sri Lanka©",
+    name: "Maharagama",
     price: "LKR 2,500,000.00 per perch (Negotiable)",
     description: `
 Location: maharagama (Yahampath Mawatha), Colombo
