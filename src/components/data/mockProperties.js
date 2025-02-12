@@ -786,6 +786,190 @@ const mockProperties = [
       "https://i.imgur.com/RJK28hc.jpeg"
     ],
     contact: { phone: "+94 71 472 7527", email: "" }
+  },
+  {
+    id: "36",
+    name: "Prime Land for Sale in Rilaulla, Kandana",
+    price: "Rs. 950,000 per perch (Negotiable)",
+    description: `
+Location: No. 119/51, Rilaulla, Kandana
+Land Type: Residential & Commercial
+Size: 31 Perches
+
+Key Features:
+- Prime Location: Just 150m from Colombo-Negombo Road
+- High Accessibility: 10 minutes to Colombo-Katunayake Expressway
+- Convenience: Only 2 minutes to GLOMARK Shopping Complex and close to schools, banks, hospitals & other essential facilities
+- Safe & Serene: Located in a peaceful, friendly neighborhood
+- Wide Road Access: 12-ft road frontage
+- Clear Deeds: Secure and hassle-free ownership
+- Private Sale: Direct from the owner
+- Flexible Pricing for serious buyers
+    `,
+    address: "No. 119/51, Rilaulla, Kandana",
+    images: [
+      "https://i.imgur.com/LCHpuhX.jpeg" 
+    ],
+    contact: { phone: "", email: "" }
+  },
+  {
+    id: "37",
+    name: "Prime Residential Land for Sale in Panadura",
+    price: "Contact for Price",
+    description: `
+An excellent opportunity to own a 72.5-perch fully approved residential land in a highly convenient location.
+The property can be purchased as a whole or split into two plots (20.5 perches and 52 perches).
+
+Key Features:
+- Fully approved residential land with all necessary permits
+- Bordered by a picturesque paddy field at the rear
+- Located just 4.5 km from Panadura town
+- Only 1.6 km to Bandaragama Road
+- 8 km to Gelanigama Highway Entrance (alternative routes available – approx. 6 km)
+- 75m walking distance to a main bus route (Panadura – Nivdawa & Panadura – Kiriberiya)
+- 100m walking distance to Panadura Pradeshiya Sabha sub-office
+    `,
+    address: "Panadura",
+    images: [
+      "https://i.imgur.com/JnJGHoq.jpeg", 
+      "https://i.imgur.com/JZtby7G.jpeg", 
+      "https://i.imgur.com/2vVTJM5.jpeg", 
+      "https://i.imgur.com/jfWbsT1.jpeg", 
+      "https://i.imgur.com/fEUEdan.jpeg",
+      "https://i.imgur.com/Qrfmni3.jpeg", 
+      "https://i.imgur.com/jfWbsT1.jpeg"
+    ],
+    contact: { phone: "", email: "" }
+  },
+  {
+    id: "38",
+    name: "Prime Property for Sale in Kandy District",
+    price: "LKR 350,000 per perch",
+    description: `
+This one-acre plot (160 perches), located near Galaha Town, offers an excellent investment opportunity.
+Strategically positioned facing the main road, it ensures easy access and visibility.
+
+Key Features:
+- Accessible main road, close to Galaha Town
+- Fully equipped with water supply and electricity
+- Panoramic views of the surrounding landscape for a tranquil setting
+- Uncultivated land, perfect for agricultural or tourism development
+- Documents available: Deed and land plan (including Pathiru)
+- Ideal investment opportunity in the growing tourism or agriculture sector
+    `,
+    address: "Near Galaha Town, Kandy District",
+    images: [
+      "https://i.imgur.com/lhxwlQd.jpeg", 
+      "https://i.imgur.com/poP2wwL.jpeg", 
+      "https://i.imgur.com/h6ybPLz.jpeg",
+      "https://i.imgur.com/GkGTxnu.jpeg", 
+      "https://i.imgur.com/HDRsYKJ.jpeg",  
+      "https://i.imgur.com/nJTxBVb.jpeg"
+    ],
+    contact: { phone: "", email: "" }
+  },
+  {
+    id: "39",
+    name: "Prime Residential Land for Sale in Mirigama Kandalama",
+    price: "Contact for Price",
+    description: `
+An exceptional opportunity to own a 60-perch fully approved residential land in a highly sought-after location.
+This property offers great potential for both residential and commercial development.
+
+Key Features:
+- Land Size: 60 Perches (1,512 square meters)
+- Fully approved with all necessary permits for construction
+- Dual road access: Surrounded by two roads, including a 30-meter-wide main road
+- Only 2 km to the Central Expressway for quick connectivity to major cities
+- Fully connected with electricity and water facilities
+- Located in a scenic area with beautiful natural views
+- Clear deeds ensuring a hassle-free transaction
+    `,
+    address: "Mirigama Kandalama",
+    images: [
+      "https://i.imgur.com/oWz13JR.jpeg", 
+      "https://i.imgur.com/lNSGbIG.jpeg", 
+      "https://i.imgur.com/vkdC8QY.jpeg", 
+      "https://i.imgur.com/ZH0MauA.jpeg", 
+      "https://i.imgur.com/rPhxk1l.jpeg", 
+      "https://i.imgur.com/URpd29e.jpeg"
+    ],
+    contact: { phone: "", email: "" }
+  },
+  {
+    id: "40",
+    name: "24 Perch Land in Gonawela, Kelaniya",
+    price: "28.5 million (Negotiable)",
+    description: `
+A 24-perch land located in Gonawela, Kelaniya in a highly residential area.
+
+Key Features:
+- Close to main roads and supermarkets
+- Just 10 minutes to Kelaniya Rajamaha Viharaya and Kelaniya Campus
+- Includes a spacious two-story house with potential to add a third story (slab already laid)
+- House features 6 rooms, including a servant's toilet
+- Ideal for families or investors
+    `,
+    address: "Gonawela, Kelaniya",
+    images: [
+      "https://i.imgur.com/hK7XoXB.jpeg", 
+      "https://i.imgur.com/9oftQG0.jpeg", 
+      "https://i.imgur.com/EwYnwxJ.jpeg", 
+      "https://i.imgur.com/QHgcWza.jpeg",
+      "https://i.imgur.com/1O2NzO2.jpeg",
+      "https://i.imgur.com/TlIRo1j.jpeg",
+      "https://i.imgur.com/0xfjTke.jpeg",
+      "https://i.imgur.com/bD5kcdG.jpeg",
+      "https://i.imgur.com/bIQU6pH.jpeg",
+      "https://i.imgur.com/N3OiHJF.jpeg",
+      "https://i.imgur.com/uJdMGih.jpeg",
+      "https://i.imgur.com/zqBGNwU.jpeg"
+    ],
+    contact: { phone: "", email: "" }
+  },
+  {
+    id: "41",
+    name: "Property for Sale in Panadura Keselwatta",
+    price: "LKR 9.8 million",
+    description: `
+This property in Panadura Keselwatta sits on a 9.30-perch land.
+
+Key Features:
+- House with slab construction and a tiled living room
+- 3 Bedrooms, 1 Bathroom, and a dining room
+- Water and electricity facilities in place
+- Includes 2 coconut trees, 2 jackfruit trees, and 1 mango tree
+- Approximately 5 km from Panadura town
+For more details, visit: www.rayrealtysl.com
+    `,
+    address: "Panadura Keselwatta",
+    images: [
+      "https://i.imgur.com/vT0bk24.jpeg", 
+      "https://i.imgur.com/zxsIS17.jpeg", 
+      "https://i.imgur.com/iirR9In.jpeg", 
+      "https://i.imgur.com/H6MVq5f.jpeg"
+    ],
+    contact: { phone: "+94 71 472 7527", email: "" }
+  },
+  {
+    id: "42",
+    name: "Raytronics Group Sri Lanka©",
+    price: "LKR 2,500,000.00 per perch (Negotiable)",
+    description: `
+Location: maharagama (Yahampath Mawatha), Colombo
+
+Key Details:
+- Distance to nearest town: 750m
+- Land extent: 10.10 perches
+    `,
+    address: "maharagama (Yahampath Mawatha), Colombo",
+    images: [
+      "https://i.imgur.com/hDeMGSQ.jpeg", 
+      "https://i.imgur.com/jSS5Tez.jpeg", 
+      "https://i.imgur.com/AvdOlFb.jpeg", 
+      "https://i.imgur.com/6TZRTjS.jpeg"
+    ],
+    contact: { phone: "", email: "" }
   }
 ];
 
