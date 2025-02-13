@@ -970,6 +970,70 @@ Key Details:
       "https://i.imgur.com/6TZRTjS.jpeg"
     ],
     contact: { phone: "", email: "" }
+  },
+  {
+    id: "43",
+    name: "Prime Beachfront Property for Sale in Wennappuwa – Ideal for Tourism & Business!",
+    price: "LKR 600,000 per perch",
+    description: `
+Unlock an exceptional investment opportunity with 31 perches of flat, beachfront land in Wennappuwa. 
+Perfect for a resort, villa, restaurant, or any tourism-related business, this prime location offers stunning ocean views and direct beach access.
+
+Key Details:
+- Price per perch: LKR 600,000
+- Total land area: 31 perches
+- Facilities available: Electricity & water
+- Legal status: Clear deeds (Swarna Bhoomi – transferable to new owner)
+
+This is a rare chance to secure high-value real estate in a booming tourism hotspot. Serious investors, act fast!
+    `,
+    address: "Wennappuwa",
+    images: [
+      "https://i.imgur.com/jImcHPc.jpeg", 
+      "https://i.imgur.com/HC4wQW7.jpeg", 
+      "https://i.imgur.com/ZALFEVq.jpeg", 
+      "https://i.imgur.com/V7xFAIX.jpeg",
+      "https://i.imgur.com/NGhUdHw.jpeg",
+      "https://i.imgur.com/tw0nCZm.jpeg",
+      "https://i.imgur.com/WuB0N2b.jpeg"
+    ],
+    contact: { phone: "", email: "" }
+  },
+  {
+    id: "44",
+    name: "Prime Investment Opportunity in Ethul Kotte",
+    price: "Contact for Price",
+    description: `
+Discover an exceptional real estate opportunity in the heart of Ethul Kotte! 
+Situated on 17.50 perches, this fully furnished three-story building offers modern design, versatility, and a steady rental income in a prime location.
+
+Property Highlights:
+- 6 independent housing units
+- Fully furnished with stylish interiors
+- Built by MEGA Company (2007 – 2011)
+- Fully registered under the Condominium Authority
+- Spacious parking for 10+ vehicles
+- 24/7 security with a guard room & separate washrooms
+- Independent water & electricity supply
+- Fire safety units installed
+- Open rooftop – perfect for recreational use
+
+Building Layout:
+- First Floor: Office space – ideal for a business or co-working space
+- Second & Third Floors: 3 independent apartments, each with separate utilities
+
+Prime Location | High Rental Potential | Secure & Modern Design
+    `,
+    address: "Ethul Kotte",
+    images: [
+      "https://i.imgur.com/fAD2AS1.jpeg",
+      "https://i.imgur.com/wi6Er1M.jpeg",
+      "https://i.imgur.com/hY8GMjb.jpeg",
+      "https://i.imgur.com/QAyxw4A.jpeg",
+      "https://i.imgur.com/OjEMaVm.jpeg",
+      "https://i.imgur.com/btDWAPp.jpeg" 
+    ],
+    contact: { phone: "", email: "" }
   }
 ];
 
