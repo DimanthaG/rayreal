@@ -1034,6 +1034,28 @@ Prime Location | High Rental Potential | Secure & Modern Design
       "https://i.imgur.com/btDWAPp.jpeg" 
     ],
     contact: { phone: "", email: "" }
+  },
+  {
+    id: "45",
+    name: "07 Perch Prime Land in Malambe-Maharagama",
+    price: "Rs. 1.5 Million per perch (Negotiable)",
+    description: `
+  07 Perch Prime Land:
+  - Located 75 meters to the Malambe-Maharagama 993 bus route
+  - 1.2 KM to High Level Road
+  - 1 KM to Old Kottawa Road
+  - Features: Clear Title, Water & Electricity
+    `,
+    address: "Malambe-Maharagama",
+    images: [
+      "https://i.imgur.com/hbpQs9m.jpeg",
+      "https://i.imgur.com/LbcAxp9.jpeg",
+      "https://i.imgur.com/hQucGCd.jpeg",
+      "https://i.imgur.com/SH7ha76.jpeg",
+      "https://i.imgur.com/ENt9ipp.jpeg",
+      "https://i.imgur.com/yaTLN73.jpeg"
+    ],
+    contact: { phone: "", email: "" }
   }
 ];
 
