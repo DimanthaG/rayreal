@@ -16,7 +16,7 @@ import {
 const ContactUsPage = () => {
   // Simple click handler for the "Send Message" button
   const handleSubmit = () => {
-    alert("Message sent! (Replace with your real submission logic.)");
+    alert("Message Failed to send. PLease Contact through the given contact details");
   };
 
   return (
