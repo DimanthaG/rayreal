@@ -3,6 +3,9 @@ import { Button, Container, Row, Col, Text, Card, Input } from '@nextui-org/reac
 import { useNavigate } from 'react-router-dom';
 import { Search } from 'react-iconly';
 import mockProperties from '../data/mockProperties'; // Adjust the path as needed
+import TiltedCard from "../TiltedCard/TiltedCard";
+import { Image } from '@nextui-org/react';
+import image from '../../assets/images/RayRealty.svg';
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -27,8 +30,13 @@ const HomePage = () => {
       {/* Hero Section */}
       <Row justify="center" align="center" css={{ height: '50vh', textAlign: 'center' }}>
         <Col>
-          <Text h1>Welcome to RayRealty</Text>
-          <Text h4>Your one-stop destination for finding your dream property.</Text>
+          <Image
+              width={500}
+              height={500}
+              src={image}
+              alt="Default Image"
+              css={{ objectFit: 'cover' }}
+            />          <Text h4>Your one-stop destination for finding your dream property.</Text>
           <Row justify="center" css={{ marginTop: '2rem' }}>
             <Input
               clearable
@@ -59,28 +67,26 @@ const HomePage = () => {
         }}
       >
         {featuredProperties.map((property, index) => (
-          <Card key={index} isHoverable css={{ maxWidth: '300px', margin: '0 auto' }}>
-            <Card.Body css={{ p: 0 }}>
-              <Card.Image
-                src={property.images[0]} // Display the first image from the array
-                objectFit="cover"
-                width="100%"
-                height={200}
-                alt={property.name}
-              />
-            </Card.Body>
-            <Card.Footer css={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
-              <Text h4 css={{ marginRight: 'auto', fontWeight: 'bold' }}>
-                {property.name}
-              </Text>
-              <Text h5 css={{ color: '$gray700' }}>
-                {property.price}
-              </Text>
-              <Button color="primary" auto as="a" href={`/property/${property.id}`}>
-                View Details
-              </Button>
-            </Card.Footer>
-          </Card>
+           <TiltedCard
+           key={index}
+           imageSrc={property.images[0]} // Display the first image from the array
+           altText={property.name}
+           captionText={`${property.name} - ${property.price}`}
+           containerHeight="300px"
+           containerWidth="300px"
+           imageHeight="300px"
+           imageWidth="300px"
+           rotateAmplitude={12}
+           scaleOnHover={1.2}
+           showMobileWarning={false}
+           showTooltip={true}
+           displayOverlayContent={true}
+           overlayContent={
+             <Button color="primary" auto as="a" href={`/property/${property.id}`}>
+               View Details
+             </Button>
+           }
+         />
         ))}
       </div>
 

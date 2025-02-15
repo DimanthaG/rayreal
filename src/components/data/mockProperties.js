@@ -29,7 +29,11 @@ const mockProperties = [
     contact: {
       phone: "416-895-1010",
       email: "homes4jeeva@gmail.com"
-    }
+    },
+    type: "Various",
+    lotSize: "Varies",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "2",
@@ -58,10 +62,13 @@ const mockProperties = [
       "https://i.imgur.com/TPm8ip3.jpeg",
       "https://i.imgur.com/xxCfcsY.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "House + Land",
+    lotSize: "20 perches",
+    bedrooms: "4",
+    bathrooms: "2"
   },
   {
-    // (Removed the first duplicate "15" — the "5.5 Acres Land in Paiyagala" — so that the final count is 35)
     id: "3",
     name: "5.5 Perches Land in Gonapola",
     price: "LKR. 34 Laks",
@@ -79,7 +86,11 @@ const mockProperties = [
       "https://imgur.com/RAmhWEz.jpeg",
       "https://imgur.com/vCxaoaP.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "House + Land",
+    lotSize: "5.5 perches",
+    bedrooms: "1",
+    bathrooms: "1"
   },
   {
     id: "4",
@@ -97,7 +108,11 @@ const mockProperties = [
     images: [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land + Old House",
+    lotSize: "14 perches",
+    bedrooms: "3",
+    bathrooms: "N/A"
   },
   {
     id: "5",
@@ -118,7 +133,11 @@ const mockProperties = [
       "https://i.imgur.com/iMCGvEC.jpeg",
       "https://i.imgur.com/wQcemO6.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "17 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "6",
@@ -141,7 +160,11 @@ const mockProperties = [
       "https://imgur.com/zKRl5o1.jpeg",
       "https://i.imgur.com/rDdnOne.mp4"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "11.70 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "7",
@@ -160,7 +183,11 @@ const mockProperties = [
       "https://i.imgur.com/DPw64jb.jpeg",
       "https://i.imgur.com/bRVmqoR.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "284.142 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "8",
@@ -189,7 +216,11 @@ const mockProperties = [
       "https://i.imgur.com/uX5WZe9.jpeg",
       "https://i.imgur.com/CWC1qNM.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Villa",
+    lotSize: "24 perches",
+    bedrooms: "4",
+    bathrooms: "4"
   },
   {
     id: "9",
@@ -225,7 +256,11 @@ const mockProperties = [
       "https://i.imgur.com/s8E7R6n.jpeg",
       "https://i.imgur.com/HcHFEe8.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "House + Land",
+    lotSize: "23 perches",
+    bedrooms: "4",
+    bathrooms: "2"
   },
   {
     id: "10",
@@ -272,7 +307,11 @@ const mockProperties = [
       "https://imgur.com/RpcZdcV.jpeg",
       "https://imgur.com/4X0bLsJ.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Two-Story House",
+    lotSize: "10 perches",
+    bedrooms: "4",
+    bathrooms: "2"
   },
   {
     id: "11",
@@ -304,7 +343,11 @@ const mockProperties = [
       "https://i.imgur.com/679RP16.jpeg",
       "https://i.imgur.com/Zd4ZnPB.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "House + Land",
+    lotSize: "80 perches",
+    bedrooms: "3",
+    bathrooms: "2"
   },
   {
     id: "12",
@@ -328,7 +371,11 @@ const mockProperties = [
       "https://i.imgur.com/zxkKb6H.jpeg",
       "https://i.imgur.com/0GTlSr2.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Two-Story House",
+    lotSize: "27 perches",
+    bedrooms: "6",
+    bathrooms: "3"
   },
   {
     id: "13",
@@ -354,7 +401,11 @@ const mockProperties = [
       "https://i.imgur.com/R6tWLN3.jpeg",
       "https://i.imgur.com/ziD1qZI.jpeg"
     ],
-    contact: { phone: "Owner 0714727527", email: "" }
+    contact: { phone: "Owner 0714727527", email: "" },
+    type: "Land + Houses",
+    lotSize: "108.8 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "14",
@@ -376,7 +427,11 @@ const mockProperties = [
       "https://i.imgur.com/wEOV1Wf.jpeg",
       "https://i.imgur.com/qJU7ijL.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Land",
+    lotSize: "7.5 or 12.5 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "15",
@@ -398,7 +453,11 @@ const mockProperties = [
       "https://i.imgur.com/YyyV0Sv.jpeg",
       "https://i.imgur.com/3b2gVhA.jpeg"
     ],
-    contact: { phone: "Contact for Details", email: "Contact for Details" }
+    contact: { phone: "Contact for Details", email: "Contact for Details" },
+    type: "House + Land",
+    lotSize: "131 perches",
+    bedrooms: "5",
+    bathrooms: "1"
   },
   {
     id: "16",
@@ -420,7 +479,11 @@ const mockProperties = [
       "https://i.imgur.com/jcPxbXy.jpeg",
       "https://i.imgur.com/62d039j.jpeg"
     ],
-    contact: { phone: "0714727527", email: "Contact for Details" }
+    contact: { phone: "0714727527", email: "Contact for Details" },
+    type: "Commercial Land",
+    lotSize: "120 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "17",
@@ -441,7 +504,11 @@ const mockProperties = [
       "https://i.imgur.com/tdC3CWL.jpeg",
       "https://i.imgur.com/Kf7bGAl.jpeg"
     ],
-    contact: { phone: "Contact for Details", email: "Contact for Details" }
+    contact: { phone: "Contact for Details", email: "Contact for Details" },
+    type: "Paddy Land",
+    lotSize: "3 acres",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "18",
@@ -461,7 +528,11 @@ const mockProperties = [
       "https://i.imgur.com/DAbHR6m.jpeg",
       "https://i.imgur.com/3NTrEES.jpeg"
     ],
-    contact: { phone: "Contact for Details", email: "Contact for Details" }
+    contact: { phone: "Contact for Details", email: "Contact for Details" },
+    type: "Coconut Land",
+    lotSize: "80 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "19",
@@ -485,7 +556,11 @@ const mockProperties = [
       "https://i.imgur.com/ZCHBU28.jpeg",
       "https://i.imgur.com/K8g3Ius.jpeg"
     ],
-    contact: { phone: "Contact for Details", email: "Contact for Details" }
+    contact: { phone: "Contact for Details", email: "Contact for Details" },
+    type: "Two-Story House",
+    lotSize: "N/A",
+    bedrooms: "4",
+    bathrooms: "2"
   },
   {
     id: "20",
@@ -496,10 +571,12 @@ const mockProperties = [
       Ideal for investment, as the owner is migrating—an opportunity for residential or agricultural use.
     `,
     address: "Polgasowita, Sri Lanka",
-    images: [
-      "https://i.imgur.com/KzbwvLq.jpeg"
-    ],
-    contact: { phone: "0714727527", email: "" }
+    images: ["https://i.imgur.com/KzbwvLq.jpeg"],
+    contact: { phone: "0714727527", email: "" },
+    type: "Land + House",
+    lotSize: "80 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "21",
@@ -521,7 +598,11 @@ const mockProperties = [
       "https://i.imgur.com/v68pNNn.jpeg",
       "https://i.imgur.com/adsUmH5.jpeg"
     ],
-    contact: { phone: "0771282920", email: "propertyowner@example.com" }
+    contact: { phone: "0771282920", email: "propertyowner@example.com" },
+    type: "Land + House",
+    lotSize: "14 perches",
+    bedrooms: "3",
+    bathrooms: "N/A"
   },
   {
     id: "22",
@@ -539,7 +620,11 @@ const mockProperties = [
       "https://i.imgur.com/ilDtTbb.jpeg",
       "https://i.imgur.com/2SHyWiS.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Land",
+    lotSize: "80 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "23",
@@ -557,7 +642,11 @@ const mockProperties = [
       "https://i.imgur.com/KxvabMI.jpeg",
       "https://i.imgur.com/pBYPgbO.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Three-Story House",
+    lotSize: "N/A",
+    bedrooms: "6",
+    bathrooms: "5"
   },
   {
     id: "24",
@@ -578,7 +667,11 @@ const mockProperties = [
       "https://i.imgur.com/99Zf2Tn.jpeg",
       "https://i.imgur.com/O1Y4nBF.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Hotel",
+    lotSize: "1 acre + 36 perches",
+    bedrooms: "15",
+    bathrooms: "N/A"
   },
   {
     id: "25",
@@ -599,7 +692,11 @@ const mockProperties = [
       "https://i.imgur.com/2Y0MEfb.jpeg",
       "https://i.imgur.com/fgh1pZr.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Land",
+    lotSize: "11.6 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "26",
@@ -621,7 +718,11 @@ const mockProperties = [
       "https://i.imgur.com/nxJ9IBz.jpeg",
       "https://i.imgur.com/n9DTWFz.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Colonial Bungalow",
+    lotSize: "59 perches",
+    bedrooms: "4",
+    bathrooms: "3"
   },
   {
     id: "27",
@@ -637,7 +738,11 @@ const mockProperties = [
       "https://i.imgur.com/gwGPNB9.jpeg",
       "https://i.imgur.com/c3OpTDm.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Building",
+    lotSize: "28 perches, 3000 sq.ft building",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "28",
@@ -655,7 +760,11 @@ const mockProperties = [
       "https://i.imgur.com/7xQFFAj.jpeg",
       "https://i.imgur.com/moqoDDH.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Land",
+    lotSize: "120 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "29",
@@ -672,7 +781,11 @@ const mockProperties = [
       "https://i.imgur.com/cmP2cVP.mp4",
       "https://i.imgur.com/VT0wPXu.jpeg"
     ],
-    contact: { phone: "0714727527", email: "" }
+    contact: { phone: "0714727527", email: "" },
+    type: "Land",
+    lotSize: "3 acres + 28 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "30",
@@ -695,7 +808,11 @@ const mockProperties = [
       "https://i.imgur.com/DM9Er2l.jpeg",
       "https://i.imgur.com/CLbmszy.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "Land",
+    lotSize: "25.6 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "31",
@@ -713,7 +830,11 @@ const mockProperties = [
       "https://i.imgur.com/GA2rgcL.jpeg",
       "https://i.imgur.com/ayNjqrD.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "Land",
+    lotSize: "40 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "32",
@@ -731,7 +852,11 @@ const mockProperties = [
       "https://i.imgur.com/xq21XTm.jpeg",
       "https://i.imgur.com/wItc0cY.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "Land",
+    lotSize: "9.3 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "33",
@@ -750,7 +875,11 @@ const mockProperties = [
       "https://i.imgur.com/2JbCK7L.jpeg",
       "https://i.imgur.com/fTbXDgN.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "Two-Story House + Land",
+    lotSize: "N/A",
+    bedrooms: "4",
+    bathrooms: "2"
   },
   {
     id: "34",
@@ -767,7 +896,11 @@ const mockProperties = [
       "https://i.imgur.com/0SZUsqy.jpeg",
       "https://i.imgur.com/coFZVIq.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "Land + partial House",
+    lotSize: "15.5 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "35",
@@ -785,7 +918,11 @@ const mockProperties = [
       "https://i.imgur.com/gaWt6V1.jpeg",
       "https://i.imgur.com/RJK28hc.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "Land",
+    lotSize: "22 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "36",
@@ -807,10 +944,12 @@ Key Features:
 - Flexible Pricing for serious buyers
     `,
     address: "No. 119/51, Rilaulla, Kandana",
-    images: [
-      "https://i.imgur.com/LCHpuhX.jpeg" 
-    ],
-    contact: { phone: "", email: "" }
+    images: ["https://i.imgur.com/LCHpuhX.jpeg"],
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "31 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "37",
@@ -831,15 +970,19 @@ Key Features:
     `,
     address: "Panadura",
     images: [
-      "https://i.imgur.com/JnJGHoq.jpeg", 
-      "https://i.imgur.com/JZtby7G.jpeg", 
-      "https://i.imgur.com/2vVTJM5.jpeg", 
-      "https://i.imgur.com/jfWbsT1.jpeg", 
+      "https://i.imgur.com/JnJGHoq.jpeg",
+      "https://i.imgur.com/JZtby7G.jpeg",
+      "https://i.imgur.com/2vVTJM5.jpeg",
+      "https://i.imgur.com/jfWbsT1.jpeg",
       "https://i.imgur.com/fEUEdan.jpeg",
-      "https://i.imgur.com/Qrfmni3.jpeg", 
+      "https://i.imgur.com/Qrfmni3.jpeg",
       "https://i.imgur.com/jfWbsT1.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Residential Land",
+    lotSize: "72.5 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "38",
@@ -859,14 +1002,18 @@ Key Features:
     `,
     address: "Near Galaha Town, Kandy District",
     images: [
-      "https://i.imgur.com/lhxwlQd.jpeg", 
-      "https://i.imgur.com/poP2wwL.jpeg", 
+      "https://i.imgur.com/lhxwlQd.jpeg",
+      "https://i.imgur.com/poP2wwL.jpeg",
       "https://i.imgur.com/h6ybPLz.jpeg",
-      "https://i.imgur.com/GkGTxnu.jpeg", 
-      "https://i.imgur.com/HDRsYKJ.jpeg",  
+      "https://i.imgur.com/GkGTxnu.jpeg",
+      "https://i.imgur.com/HDRsYKJ.jpeg",
       "https://i.imgur.com/nJTxBVb.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "160 perches (1 acre)",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "39",
@@ -887,14 +1034,18 @@ Key Features:
     `,
     address: "Mirigama Kandalama",
     images: [
-      "https://i.imgur.com/oWz13JR.jpeg", 
-      "https://i.imgur.com/lNSGbIG.jpeg", 
-      "https://i.imgur.com/vkdC8QY.jpeg", 
-      "https://i.imgur.com/ZH0MauA.jpeg", 
-      "https://i.imgur.com/rPhxk1l.jpeg", 
+      "https://i.imgur.com/oWz13JR.jpeg",
+      "https://i.imgur.com/lNSGbIG.jpeg",
+      "https://i.imgur.com/vkdC8QY.jpeg",
+      "https://i.imgur.com/ZH0MauA.jpeg",
+      "https://i.imgur.com/rPhxk1l.jpeg",
       "https://i.imgur.com/URpd29e.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Residential Land",
+    lotSize: "60 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "40",
@@ -912,9 +1063,9 @@ Key Features:
     `,
     address: "Gonawela, Kelaniya",
     images: [
-      "https://i.imgur.com/hK7XoXB.jpeg", 
-      "https://i.imgur.com/9oftQG0.jpeg", 
-      "https://i.imgur.com/EwYnwxJ.jpeg", 
+      "https://i.imgur.com/hK7XoXB.jpeg",
+      "https://i.imgur.com/9oftQG0.jpeg",
+      "https://i.imgur.com/EwYnwxJ.jpeg",
       "https://i.imgur.com/QHgcWza.jpeg",
       "https://i.imgur.com/1O2NzO2.jpeg",
       "https://i.imgur.com/TlIRo1j.jpeg",
@@ -925,7 +1076,11 @@ Key Features:
       "https://i.imgur.com/uJdMGih.jpeg",
       "https://i.imgur.com/zqBGNwU.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Two-Story House + Land",
+    lotSize: "24 perches",
+    bedrooms: "6",
+    bathrooms: "2"
   },
   {
     id: "41",
@@ -944,12 +1099,16 @@ For more details, visit: www.rayrealtysl.com
     `,
     address: "Panadura Keselwatta",
     images: [
-      "https://i.imgur.com/vT0bk24.jpeg", 
-      "https://i.imgur.com/zxsIS17.jpeg", 
-      "https://i.imgur.com/iirR9In.jpeg", 
+      "https://i.imgur.com/vT0bk24.jpeg",
+      "https://i.imgur.com/zxsIS17.jpeg",
+      "https://i.imgur.com/iirR9In.jpeg",
       "https://i.imgur.com/H6MVq5f.jpeg"
     ],
-    contact: { phone: "+94 71 472 7527", email: "" }
+    contact: { phone: "+94 71 472 7527", email: "" },
+    type: "House + Land",
+    lotSize: "9.3 perches",
+    bedrooms: "3",
+    bathrooms: "1"
   },
   {
     id: "42",
@@ -964,12 +1123,16 @@ Key Details:
     `,
     address: "maharagama (Yahampath Mawatha), Colombo",
     images: [
-      "https://i.imgur.com/hDeMGSQ.jpeg", 
-      "https://i.imgur.com/jSS5Tez.jpeg", 
-      "https://i.imgur.com/AvdOlFb.jpeg", 
+      "https://i.imgur.com/hDeMGSQ.jpeg",
+      "https://i.imgur.com/jSS5Tez.jpeg",
+      "https://i.imgur.com/AvdOlFb.jpeg",
       "https://i.imgur.com/6TZRTjS.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "10.10 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "43",
@@ -989,15 +1152,19 @@ This is a rare chance to secure high-value real estate in a booming tourism hots
     `,
     address: "Wennappuwa",
     images: [
-      "https://i.imgur.com/jImcHPc.jpeg", 
-      "https://i.imgur.com/HC4wQW7.jpeg", 
-      "https://i.imgur.com/ZALFEVq.jpeg", 
+      "https://i.imgur.com/jImcHPc.jpeg",
+      "https://i.imgur.com/HC4wQW7.jpeg",
+      "https://i.imgur.com/ZALFEVq.jpeg",
       "https://i.imgur.com/V7xFAIX.jpeg",
       "https://i.imgur.com/NGhUdHw.jpeg",
       "https://i.imgur.com/tw0nCZm.jpeg",
       "https://i.imgur.com/WuB0N2b.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Beachfront Land",
+    lotSize: "31 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "44",
@@ -1031,9 +1198,13 @@ Prime Location | High Rental Potential | Secure & Modern Design
       "https://i.imgur.com/hY8GMjb.jpeg",
       "https://i.imgur.com/QAyxw4A.jpeg",
       "https://i.imgur.com/OjEMaVm.jpeg",
-      "https://i.imgur.com/btDWAPp.jpeg" 
+      "https://i.imgur.com/btDWAPp.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Building/Condominium",
+    lotSize: "17.50 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   },
   {
     id: "45",
@@ -1055,7 +1226,11 @@ Prime Location | High Rental Potential | Secure & Modern Design
       "https://i.imgur.com/ENt9ipp.jpeg",
       "https://i.imgur.com/yaTLN73.jpeg"
     ],
-    contact: { phone: "", email: "" }
+    contact: { phone: "", email: "" },
+    type: "Land",
+    lotSize: "7 perches",
+    bedrooms: "N/A",
+    bathrooms: "N/A"
   }
 ];
 

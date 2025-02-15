@@ -1,21 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link as RouterLink } from "react-router-dom";
-import { Link, Container, Text, Button, Spacer } from "@nextui-org/react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel styles
-import mockProperties from "../data/mockProperties"; // Import mock data
-import "../styles/PropertyDetailsPage.css"; // Import custom styles
+import {
+  Container,
+  Text,
+  Button,
+  Spacer,
+  Card,
+  Grid,
+  Row
+} from "@nextui-org/react";
+
+// React Slick
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// Yet Another React Lightbox (for fullscreen images)
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+import MapComponent from "./MapComponent"; // Import the map component
+import mockProperties from "../data/mockProperties";
+import "../styles/PropertyDetailsPage.css";
 
 const PropertyDetailsPage = () => {
-  const { id } = useParams(); // Property ID from the URL
+  const { id } = useParams();
   const [property, setProperty] = useState(null);
 
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
-    const fetchProperty = () => {
-      const foundProperty = mockProperties.find((item) => item.id === id);
-      setProperty(foundProperty || null);
-    };
-    fetchProperty();
+    const foundProperty = mockProperties.find((item) => item.id === id);
+    setProperty(foundProperty || null);
   }, [id]);
 
   if (!property) {
@@ -28,46 +46,149 @@ const PropertyDetailsPage = () => {
     );
   }
 
+  // React Slick settings for the main carousel (auto-scroll)
+  const mainSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    adaptiveHeight: true,
+  };
+
+  // Convert property images into slides for the lightbox
+  const slides = property.images.map((img) => ({ src: img }));
+
   return (
-    <Container className="property-details-page">
-        <div style={{ display: "flex", justifyContent: "flex-start" }}>
-          <Button auto flat as={RouterLink} to="/listings">
-            Back to Listings
-          </Button>
-        </div>
-        <Spacer y={1} />
-        {/* Carousel */}
-      <div className="carousel-section">
-        <Carousel showThumbs={false} autoPlay infiniteLoop>
+    <Container>
+      {/* Back Button */}
+      <Button
+          as={RouterLink}
+          to="/listings"
+          size="sm"
+          color="primary"
+          css={{ mt: "$4" , mb : "$4", position: "inherit", left: "0", right: "0", width: "20%" }}
+        >
+          Back to Listings
+        </Button>
+
+      {/* Main Carousel (react-slick) */}
+      <Card css={{ p: "$6" }}>
+        <Slider {...mainSliderSettings}>
           {property.images.map((url, index) => (
-            <div key={index} className="carousel-image-container">
-              <img src={url} alt={`Property image ${index + 1}`} className="carousel-image" />
+            <div
+              key={index}
+              onClick={() => {
+                // Open Lightbox at the clicked slide
+                setCurrentSlide(index);
+                setLightboxOpen(true);
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                src={url}
+                alt={`Property image ${index + 1}`}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "500px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                }}
+              />
             </div>
           ))}
-        </Carousel>
-      </div>
-
-      {/* Property Details */}
-      <div className="text-section">
-        <Text h1 className="property-title">{property.name}</Text>
-        <Text className="price">Price: {property.price} (Negotiable)</Text>
-        <Text className="description">{property.description}</Text>
-        <Text className="address">
-          <b>Address:</b> {property.address}
-        </Text>
-        <Button
-          className="schedule-button"
-          as="a"
-          href="/contact"
-          to="/contact"
-        >
-          Schedule a Visit
-        </Button>
-      </div>
+        </Slider>
+      </Card>
 
       <Spacer y={2} />
-      {/* Location Section */}
-      
+
+      {/* Airbnb-ish Header: Title & Address */}
+      <Row justify="space-between" align="center">
+        <div>
+          <Text h1 css={{ mb: "$2", fontWeight: "bold" }}>
+            {property.name}
+          </Text>
+          <Text css={{ color: "$accents7" }}>
+            {property.address}
+          </Text>
+        </div>
+      </Row>
+
+      <Spacer y={2} />
+      <hr />
+
+      {/* MAIN CONTENT GRID */}
+      <Grid.Container gap={2} css={{ mt: "$8" }}>
+        {/* Left column: Description & Property Highlights */}
+        <Grid xs={12} sm={8} direction="column">
+          <Text h3 css={{ mb: "$5" }}>
+            Property Description
+          </Text>
+          <Text css={{ lineHeight: "1.5", mb: "$5" }}>
+            {property.description}
+          </Text>
+
+          <Row wrap="wrap" css={{ gap: "$10", mb: "$8" }}>
+            <Text>
+              <b>Bedrooms:</b> {property.bedrooms || "3"}
+            </Text>
+            <Text>
+              <b>Bathrooms:</b> {property.bathrooms || "2"}
+            </Text>
+            <Text>
+              <b>Property Type:</b> {property.type || "House"}
+            </Text>
+            <Text>
+              <b>Lot Size:</b> {property.lotSize || "2,500 sqft"}
+            </Text>
+          </Row>
+        </Grid>
+
+        {/* Right column: Price & CTA */}
+        <Grid xs={12} sm={4}>
+          <Card variant="bordered" css={{ p: "$8", position: "sticky", top: "80px" }}>
+            <Text h3 css={{ mb: "$1" }}>
+              Listing Price: {property.price}
+            </Text>
+            <Text small css={{ color: "$accents7", mb: "$5" }}>
+              (Negotiable)
+            </Text>
+            <Text css={{ mb: "$10" }}>
+              Interested in this property? Schedule a visit to experience it firsthand.
+            </Text>
+            <Button color="primary" auto as={RouterLink} to="/contact" css={{ mt: "$2" }}>
+              Schedule a Visit
+            </Button>
+          </Card>
+        </Grid>
+      </Grid.Container>
+
+      <Spacer y={4} />
+
+      {/* Map Section */}
+      <Text h3 css={{ mb: "$5" }}>
+        Location on Map
+      </Text>
+      <MapComponent
+        latitude={property.latitude || 6.9271}  // Default to Colombo, Sri Lanka coordinates if not provided
+        longitude={property.longitude || 79.8612}
+        address={property.address}
+      />
+
+      {/* Lightbox (fullscreen, dimmed background) */}
+      {lightboxOpen && (
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={slides}
+          index={currentSlide}
+          onIndexChange={setCurrentSlide}
+        />
+      )}
     </Container>
   );
 };

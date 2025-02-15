@@ -24,6 +24,7 @@
     --destructive-foreground: 210 40% 98%;
     --ring: 215 20.2% 65.1%;
     --radius: 0.5rem;
+    scroll-behavior: smooth;
   }
 
   .dark {
@@ -57,3 +58,4 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
