@@ -179,7 +179,7 @@ const PropertyDetailsPage = () => {
 
       <Spacer y={4} />
 
-      {/* Map Section */}
+      {/* Map Section 
       <Text h3 css={{ mb: "$5" }}>
         Location on Map
       </Text>
@@ -188,7 +188,7 @@ const PropertyDetailsPage = () => {
         longitude={property.longitude || 79.8612}
         address={property.address}
       />
-
+      */}
       {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox
