@@ -12,6 +12,7 @@ import AdminPage from './components/AdminPage/AdminPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import MortgageCalculator from './components/MortgageCalculator/MortgageCalculator';
 import AddPropertyPage from './components/AddPropertyPage/AddPropertyPage';
+import Editproperty from './components/EditPropertyPage/EditPropertyPage';
 import AgentsProfiles from './components/AgentProfilesPage/AgentProfilesPage';
 import { Navbar, Text, Button } from '@nextui-org/react';
 import { Image } from '@nextui-org/react';
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="/MortgageCalculator" element={<MortgageCalculator />} />
           <Route path="/add-property" element={<AddPropertyPage />} />
           <Route path="/agents" element={<AgentsProfiles />} />
+          <Route path="/editproperty/:id" element={<Editproperty />} />
         </Routes>
       </Router>
       <Footer />

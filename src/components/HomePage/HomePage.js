@@ -1,25 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Container, Row, Col, Text, Card, Input } from '@nextui-org/react';
+import { Button, Container, Row, Col, Text, Input, Image } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
 import { Search } from 'react-iconly';
-import mockProperties from '../data/mockProperties'; // Adjust the path as needed
-import TiltedCard from "../TiltedCard/TiltedCard";
-import { Image } from '@nextui-org/react';
-import image from '../../assets/images/RayRealty.svg';
+import TiltedCard from '../TiltedCard/TiltedCard';
+import rayRealtyLogo from '../../assets/images/RayRealty.svg'; // Adjust path if needed
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [featuredProperties, setFeaturedProperties] = useState([]);
+  const [properties, setProperties] = useState([]);        // All fetched properties
+  const [featuredProperties, setFeaturedProperties] = useState([]); // Random 6 properties
   const navigate = useNavigate();
 
-  // Shuffle and select 6 random properties
+  // Utility to shuffle and pick N items
+  const getRandomProperties = (arr, count) => {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  // Fetch properties from your API
   useEffect(() => {
-    const getRandomProperties = (properties, count) => {
-      const shuffled = [...properties].sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, count);
+    const fetchProperties = async () => {
+      try {
+        // Adjust if your endpoint is different or needs auth
+        const response = await fetch('https://server-realty.vercel.app/api/properties');
+        if (!response.ok) {
+          throw new Error('Failed to fetch properties');
+        }
+        const data = await response.json();
+        // data.properties should be the array of properties
+        setProperties(data.properties);
+      } catch (error) {
+        console.error(error);
+      }
     };
-    setFeaturedProperties(getRandomProperties(mockProperties, 6));
+
+    fetchProperties();
   }, []);
+
+  // Once we have properties, pick 6 at random
+  useEffect(() => {
+    if (properties.length > 0) {
+      setFeaturedProperties(getRandomProperties(properties, 6));
+    }
+  }, [properties]);
 
   const handleSearch = () => {
     navigate(`/search?q=${searchQuery}`);
@@ -31,12 +54,13 @@ const HomePage = () => {
       <Row justify="center" align="center" css={{ height: '50vh', textAlign: 'center' }}>
         <Col>
           <Image
-              width={500}
-              height={500}
-              src={image}
-              alt="Default Image"
-              css={{ objectFit: 'cover' }}
-            />          <Text h4>Your one-stop destination for finding your dream property.</Text>
+            width={500}
+            height={500}
+            src={rayRealtyLogo}
+            alt="RayRealty Logo"
+            css={{ objectFit: 'cover' }}
+          />
+          <Text h4>Your one-stop destination for finding your dream property.</Text>
           <Row justify="center" css={{ marginTop: '2rem' }}>
             <Input
               clearable
@@ -58,6 +82,7 @@ const HomePage = () => {
       <Text h2 css={{ textAlign: 'center', margin: '2rem 0' }}>
         Featured Properties
       </Text>
+
       <div
         style={{
           display: 'grid',
@@ -66,28 +91,36 @@ const HomePage = () => {
           justifyContent: 'center',
         }}
       >
-        {featuredProperties.map((property, index) => (
-           <TiltedCard
-           key={index}
-           imageSrc={property.images[0]} // Display the first image from the array
-           altText={property.name}
-           captionText={`${property.name} - ${property.price}`}
-           containerHeight="300px"
-           containerWidth="300px"
-           imageHeight="300px"
-           imageWidth="300px"
-           rotateAmplitude={12}
-           scaleOnHover={1.2}
-           showMobileWarning={false}
-           showTooltip={true}
-           displayOverlayContent={true}
-           overlayContent={
-             <Button color="primary" auto as="a" href={`/property/${property.id}`}>
-               View Details
-             </Button>
-           }
-         />
-        ))}
+        {featuredProperties.map((property) => {
+          // If your backend uses 'imageUrls', adapt here:
+          const firstImage =
+            property.imageUrls && property.imageUrls.length > 0
+              ? property.imageUrls[0]
+              : 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png';
+
+          return (
+            <TiltedCard
+              key={property._id || property.id}
+              imageSrc={firstImage}
+              altText={property.name}
+              captionText={`${property.name} - ${property.price}`}
+              containerHeight="300px"
+              containerWidth="300px"
+              imageHeight="300px"
+              imageWidth="300px"
+              rotateAmplitude={12}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <Button color="primary" auto as="a" href={`/property/${property._id || property.id}`}>
+                  View Details
+                </Button>
+              }
+            />
+          );
+        })}
       </div>
 
       {/* No Featured Properties Message */}

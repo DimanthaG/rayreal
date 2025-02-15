@@ -14,9 +14,11 @@ const ListingsPage = () => {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const response = await fetch("https://your-api-url.com/properties"); // Replace with your API endpoint
+        const response = await fetch("https://server-realty.vercel.app/api/properties");
+        if (!response.ok) throw new Error("Failed to fetch properties");
         const data = await response.json();
-        setListings(data);
+        // Assume API returns { properties: [...] }
+        setListings(data.properties);
       } catch (error) {
         console.error("Error fetching listings:", error);
         setListings(mockProperties);
@@ -65,33 +67,41 @@ const ListingsPage = () => {
         <Spacer y={1} />
       </Container>
 
-      {/* Listings Grid using your existing Row + Card layout */}
+      {/* Listings Grid */}
       <Row justify="center" wrap="wrap" css={{ gap: "1rem" }}>
-        {currentListings.map((property, index) => (
-          <Card key={index} isHoverable css={{ maxWidth: "300px", margin: "0 auto" }}>
-            <Card.Body css={{ p: 0 }}>
-              <Card.Image
-                src={property.images[0]} // Use the first image
-                objectFit="cover"
-                width="100%"
-                height={200}
-                alt={property.name}
-                loading="lazy" // Lazy-load images
-              />
-            </Card.Body>
-            <Card.Footer css={{ justifyContent: "space-between", flexWrap: "wrap" }}>
-              <Text h4 css={{ marginRight: "auto", fontWeight: "bold" }}>
-                {property.name}
-              </Text>
-              <Text h5 css={{ color: "$gray700" }}>
-                {property.price}
-              </Text>
-              <Button color="primary" auto as={Link} to={`/property/${property.id}`}>
-                View Details
-              </Button>
-            </Card.Footer>
-          </Card>
-        ))}
+        {currentListings.map((property, index) => {
+          // Use the first image from imageUrls; fallback if empty
+          const mainImage =
+            property.imageUrls && property.imageUrls.length > 0
+              ? property.imageUrls[0]
+              : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png";
+
+          return (
+            <Card key={property._id || property.id} isHoverable css={{ maxWidth: "300px", margin: "0 auto" }}>
+              <Card.Body css={{ p: 0 }}>
+                <Card.Image
+                  src={mainImage}
+                  objectFit="cover"
+                  width="100%"
+                  height={200}
+                  alt={property.name}
+                  loading="lazy"
+                />
+              </Card.Body>
+              <Card.Footer css={{ justifyContent: "space-between", flexWrap: "wrap" }}>
+                <Text h4 css={{ marginRight: "auto", fontWeight: "bold" }}>
+                  {property.name}
+                </Text>
+                <Text h5 css={{ color: "$gray700" }}>
+                  {property.price}
+                </Text>
+                <Button color="primary" auto as={Link} to={`/property/${property._id || property.id}`}>
+                  View Details
+                </Button>
+              </Card.Footer>
+            </Card>
+          );
+        })}
       </Row>
 
       <Spacer y={2} />

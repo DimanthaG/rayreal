@@ -7,10 +7,11 @@ import {
   Spacer,
   Card,
   Grid,
-  Row
+  Row,
+  Image
 } from "@nextui-org/react";
 
-// React Slick
+// React Slick (Carousel)
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,8 +20,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-import MapComponent from "./MapComponent"; // Import the map component
-import mockProperties from "../data/mockProperties";
+// Map Component (assumed to exist)
+import MapComponent from "./MapComponent";
+
 import "../styles/PropertyDetailsPage.css";
 
 const PropertyDetailsPage = () => {
@@ -32,8 +34,17 @@ const PropertyDetailsPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const foundProperty = mockProperties.find((item) => item.id === id);
-    setProperty(foundProperty || null);
+    const fetchProperty = async () => {
+      try {
+        const response = await fetch(`https://server-realty.vercel.app/api/properties/${id}`);
+        if (!response.ok) throw new Error("Failed to fetch property details");
+        const data = await response.json();
+        setProperty(data.property);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    fetchProperty();
   }, [id]);
 
   if (!property) {
@@ -46,7 +57,7 @@ const PropertyDetailsPage = () => {
     );
   }
 
-  // React Slick settings for the main carousel (auto-scroll)
+  // React Slick settings for the main carousel
   const mainSliderSettings = {
     dots: true,
     infinite: true,
@@ -59,30 +70,29 @@ const PropertyDetailsPage = () => {
     adaptiveHeight: true,
   };
 
-  // Convert property images into slides for the lightbox
-  const slides = property.images.map((img) => ({ src: img }));
+  // Convert property.imageUrls into slides for the lightbox
+  const slides = property.imageUrls.map((img) => ({ src: img }));
 
   return (
     <Container>
       {/* Back Button */}
       <Button
-          as={RouterLink}
-          to="/listings"
-          size="sm"
-          color="primary"
-          css={{ mt: "$4" , mb : "$4", position: "inherit", left: "0", right: "0", width: "20%" }}
-        >
-          Back to Listings
-        </Button>
+        as={RouterLink}
+        to="/listings"
+        size="sm"
+        color="primary"
+        css={{ mt: "$4", mb: "$4", width: "20%" }}
+      >
+        Back to Listings
+      </Button>
 
-      {/* Main Carousel (react-slick) */}
+      {/* Main Carousel */}
       <Card css={{ p: "$6" }}>
         <Slider {...mainSliderSettings}>
-          {property.images.map((url, index) => (
+          {property.imageUrls.map((url, index) => (
             <div
               key={index}
               onClick={() => {
-                // Open Lightbox at the clicked slide
                 setCurrentSlide(index);
                 setLightboxOpen(true);
               }}
@@ -106,7 +116,7 @@ const PropertyDetailsPage = () => {
 
       <Spacer y={2} />
 
-      {/* Airbnb-ish Header: Title & Address */}
+      {/* Header: Title & Address */}
       <Row justify="space-between" align="center">
         <div>
           <Text h1 css={{ mb: "$2", fontWeight: "bold" }}>
@@ -121,9 +131,9 @@ const PropertyDetailsPage = () => {
       <Spacer y={2} />
       <hr />
 
-      {/* MAIN CONTENT GRID */}
+      {/* Main Content */}
       <Grid.Container gap={2} css={{ mt: "$8" }}>
-        {/* Left column: Description & Property Highlights */}
+        {/* Left Column: Description & Highlights */}
         <Grid xs={12} sm={8} direction="column">
           <Text h3 css={{ mb: "$5" }}>
             Property Description
@@ -134,21 +144,21 @@ const PropertyDetailsPage = () => {
 
           <Row wrap="wrap" css={{ gap: "$10", mb: "$8" }}>
             <Text>
-              <b>Bedrooms:</b> {property.bedrooms || "3"}
+              <b>Bedrooms:</b> {property.bedrooms || "N/A"}
             </Text>
             <Text>
-              <b>Bathrooms:</b> {property.bathrooms || "2"}
+              <b>Bathrooms:</b> {property.bathrooms || "N/A"}
             </Text>
             <Text>
-              <b>Property Type:</b> {property.type || "House"}
+              <b>Type:</b> {property.type || "House"}
             </Text>
             <Text>
-              <b>Lot Size:</b> {property.lotSize || "2,500 sqft"}
+              <b>Lot Size:</b> {property.lotSize || "N/A"}
             </Text>
           </Row>
         </Grid>
 
-        {/* Right column: Price & CTA */}
+        {/* Right Column: Price & Call-to-Action */}
         <Grid xs={12} sm={4}>
           <Card variant="bordered" css={{ p: "$8", position: "sticky", top: "80px" }}>
             <Text h3 css={{ mb: "$1" }}>
@@ -174,12 +184,12 @@ const PropertyDetailsPage = () => {
         Location on Map
       </Text>
       <MapComponent
-        latitude={property.latitude || 6.9271}  // Default to Colombo, Sri Lanka coordinates if not provided
+        latitude={property.latitude || 6.9271} // Default to Colombo coordinates if not provided
         longitude={property.longitude || 79.8612}
         address={property.address}
       />
 
-      {/* Lightbox (fullscreen, dimmed background) */}
+      {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox
           open={lightboxOpen}
