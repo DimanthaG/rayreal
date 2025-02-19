@@ -7,8 +7,7 @@ import {
   Spacer,
   Card,
   Grid,
-  Row,
-  Image
+  Row
 } from "@nextui-org/react";
 
 // React Slick (Carousel)
@@ -20,8 +19,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// Map Component (assumed to exist)
-import MapComponent from "./MapComponent";
+// Import your map component if needed
+// import MapComponent from "./MapComponent";
 
 import "../styles/PropertyDetailsPage.css";
 
@@ -32,6 +31,9 @@ const PropertyDetailsPage = () => {
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Your proxy endpoint
+  const proxyPrefix = "https://server-realty.vercel.app/api/proxy?url=";
 
   useEffect(() => {
     const fetchProperty = async () => {
@@ -70,8 +72,10 @@ const PropertyDetailsPage = () => {
     adaptiveHeight: true,
   };
 
-  // Convert property.imageUrls into slides for the lightbox
-  const slides = property.imageUrls.map((img) => ({ src: img }));
+  // Convert property.imageUrls into proxied slides for the lightbox
+  const slides = property.imageUrls.map((img) => ({
+    src: proxyPrefix + encodeURIComponent(img),
+  }));
 
   return (
     <Container>
@@ -89,28 +93,33 @@ const PropertyDetailsPage = () => {
       {/* Main Carousel */}
       <Card css={{ p: "$6" }}>
         <Slider {...mainSliderSettings}>
-          {property.imageUrls.map((url, index) => (
-            <div
-              key={index}
-              onClick={() => {
-                setCurrentSlide(index);
-                setLightboxOpen(true);
-              }}
-              style={{ cursor: "pointer" }}
-            >
-              <img
-                src={url}
-                alt={`Property image ${index + 1}`}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  maxHeight: "500px",
-                  objectFit: "cover",
-                  borderRadius: "8px",
+          {property.imageUrls.map((originalUrl, index) => {
+            // Convert each image URL to a proxied URL
+            const proxiedUrl = proxyPrefix + encodeURIComponent(originalUrl);
+
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  setCurrentSlide(index);
+                  setLightboxOpen(true);
                 }}
-              />
-            </div>
-          ))}
+                style={{ cursor: "pointer" }}
+              >
+                <img
+                  src={proxiedUrl}
+                  alt={`Property image ${index + 1}`}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "500px",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                  }}
+                />
+              </div>
+            );
+          })}
         </Slider>
       </Card>
 
@@ -184,11 +193,12 @@ const PropertyDetailsPage = () => {
         Location on Map
       </Text>
       <MapComponent
-        latitude={property.latitude || 6.9271} // Default to Colombo coordinates if not provided
+        latitude={property.latitude || 6.9271}
         longitude={property.longitude || 79.8612}
         address={property.address}
       />
       */}
+
       {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox

@@ -80,7 +80,9 @@ const ListingsPage = () => {
             <Card key={property._id || property.id} isHoverable css={{ maxWidth: "300px", margin: "0 auto" }}>
               <Card.Body css={{ p: 0 }}>
                 <Card.Image
-                  src={mainImage}
+                  src={`https://server-realty.vercel.app/api/proxy?url=${encodeURIComponent(
+                    mainImage
+                  )}`}                 
                   objectFit="cover"
                   width="100%"
                   height={200}
