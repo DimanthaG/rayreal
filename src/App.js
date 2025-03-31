@@ -4,6 +4,7 @@ import { Navbar, Text, Button, Image } from '@nextui-org/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import image from './assets/images/RayRealty.svg';
 import './styles/animations.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Import all page components
 import HomePage from './components/HomePage/HomePage';
@@ -159,9 +160,17 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <Navbar />
+          <main style={{ flex: 1 }}>
+            <AppContent />
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 
