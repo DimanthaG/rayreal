@@ -49,50 +49,139 @@ const HomePage = () => {
   };
 
   return (
-    <Container>
+    <Container css={{
+      '@xsMax': {
+        padding: '$sm'
+      }
+    }}>
       {/* Hero Section */}
-      <Row justify="center" align="center" css={{ height: '50vh', textAlign: 'center' }}>
-        <Col>
-          <Image
-            width={500}
-            height={500}
-            src={rayRealtyLogo}
-            alt="RayRealty Logo"
-            css={{ objectFit: 'cover' }}
-          />
-          <Text h4>Your one-stop destination for finding your dream property.</Text>
-          <Row justify="center" css={{ marginTop: '2rem' }}>
-            <Input
-              clearable
-              bordered
-              placeholder="Search for properties..."
-              contentLeft={<Search set="bold" primaryColor="gray" />}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              css={{ width: '50%' }}
+      <Row 
+        justify="center" 
+        align="center" 
+        css={{ 
+          minHeight: '40vh',
+          textAlign: 'center',
+          pt: '$xl',
+          '@xsMax': {
+            minHeight: 'auto',
+            py: '$xl'
+          }
+        }}
+      >
+        <Col css={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          '@xsMax': {
+            padding: 0,
+            width: '100%'
+          }
+        }}>
+          <div css={{
+            width: '100%',
+            maxWidth: '180px',
+            margin: '0 auto',
+            '@xsMax': {
+              maxWidth: '150px'
+            }
+          }}>
+            <Image
+              src={rayRealtyLogo}
+              alt="RayRealty Logo"
+              css={{ 
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain'
+              }}
             />
-            <Button color="primary" auto css={{ marginLeft: '1rem' }} onClick={handleSearch}>
-              Search
-            </Button>
-          </Row>
+          </div>
+          
+          <Text 
+            h4 
+            css={{
+              margin: '$xl 0 $lg',
+              maxWidth: '600px',
+              '@xsMax': {
+                fontSize: '$md',
+                margin: '$lg 0',
+                maxWidth: '85%',
+                lineHeight: '1.4'
+              }
+            }}
+          >
+            Your one-stop destination for finding your dream property.
+          </Text>
+
+          <div css={{ 
+            width: '100%',
+            maxWidth: '500px',
+            margin: '0 auto',
+            '@xsMax': {
+              maxWidth: '85%'
+            }
+          }}>
+            <Row 
+              css={{ 
+                gap: '$sm',
+                '@xsMax': {
+                  flexDirection: 'column'
+                }
+              }}
+            >
+              <Input
+                clearable
+                bordered
+                placeholder="Search for properties..."
+                contentLeft={<Search set="bold" primaryColor="gray" />}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                css={{ 
+                  flex: 1
+                }}
+              />
+              <Button 
+                color="primary" 
+                auto
+                onClick={handleSearch}
+                css={{
+                  '@xsMax': {
+                    width: '100%'
+                  }
+                }}
+              >
+                Search
+              </Button>
+            </Row>
+          </div>
         </Col>
       </Row>
 
       {/* Featured Properties Section */}
-      <Text h2 css={{ textAlign: 'center', margin: '2rem 0' }}>
+      <Text 
+        h2 
+        css={{ 
+          textAlign: 'center', 
+          margin: '2rem 0',
+          '@xsMax': {
+            fontSize: '$2xl',
+            margin: '$lg 0'
+          }
+        }}
+      >
         Featured Properties
       </Text>
 
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '1.5rem',
           justifyContent: 'center',
         }}
       >
         {featuredProperties.map((property) => {
-          // If your backend uses 'imageUrls', adapt here:
           const firstImage =
             property.imageUrls && property.imageUrls.length > 0
               ? property.imageUrls[0]
@@ -104,17 +193,28 @@ const HomePage = () => {
               imageSrc={firstImage}
               altText={property.name}
               captionText={`${property.name} - ${property.price}`}
-              containerHeight="300px"
-              containerWidth="300px"
-              imageHeight="300px"
-              imageWidth="300px"
-              rotateAmplitude={12}
-              scaleOnHover={1.2}
+              containerHeight="250px"
+              containerWidth="100%"
+              imageHeight="250px"
+              imageWidth="100%"
+              rotateAmplitude={8}
+              scaleOnHover={1.1}
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
-                <Button color="primary" auto as="a" href={`/property/${property._id || property.id}`}>
+                <Button 
+                  color="primary" 
+                  auto 
+                  as="a" 
+                  href={`/property/${property._id || property.id}`}
+                  css={{
+                    '@xsMax': {
+                      fontSize: '$sm',
+                      padding: '$xs $sm'
+                    }
+                  }}
+                >
                   View Details
                 </Button>
               }
@@ -125,7 +225,17 @@ const HomePage = () => {
 
       {/* No Featured Properties Message */}
       {featuredProperties.length === 0 && (
-        <Text h4 css={{ textAlign: 'center', marginTop: '2rem' }}>
+        <Text 
+          h4 
+          css={{ 
+            textAlign: 'center', 
+            marginTop: '2rem',
+            '@xsMax': {
+              fontSize: '$lg',
+              marginTop: '$lg'
+            }
+          }}
+        >
           No featured properties at the moment. Check back later!
         </Text>
       )}

@@ -1,130 +1,102 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Grid, Text, Link , Image} from '@nextui-org/react';
-import image from '../../assets/images/RayRealty.svg';
-
-const DesktopFooter = () => (
-  <div
-    style={{
-      width: '100%',
-      backgroundColor: '#4169E1',
-      marginTop: '2rem',
-      padding: '2rem 0',
-      color: '#fff',
-    }}
-  >
-    <Container>
-      <Grid.Container gap={2} justify="space-between">
-        {/* Company Info */}
-        <Grid xs={12} sm={4}>
-          <div>
-            <Text h4 css={{ fontSize: '28px' }}>RayRealty</Text>
-            <Text h6 css={{ fontSize: '18px', fontWeight: 'bold' }}>
-              Part of the Raytronics Group <br />
-            </Text>
-            <Text h6 css={{ fontSize: '18px', fontWeight: 'bold', color: '#fff' }}>
-              330/08, Saman Mawatha<br /> Lake Road<br /> Boralesgamuwa
-            </Text>
-          </div>
-        </Grid>
-
-        {/* Quick Links */}
-        <Grid xs={12} sm={4}>
-          <div>
-            <Text h4 css={{ fontSize: '28px' }}>Quick Links</Text>
-            <Link href="/" css={{ display: 'block', color: '#fff' }}>
-              Home
-            </Link>
-            <Link href="/listings" css={{ display: 'block', color: '#fff' }}>
-              Listings
-            </Link>
-            <Link href="/about" css={{ display: 'block', color: '#fff' }}>
-              About Us
-            </Link>
-            <Link href="/contact" css={{ display: 'block', color: '#fff' }}>
-              Contact Us
-            </Link>
-            <Link href="/faq" css={{ display: 'block', color: '#fff' }}>
-              FAQ
-            </Link>
-          </div>
-        </Grid>
-
-        {/* Contact Info */}
-        <Grid xs={12} sm={4}>
-          <div>
-            <Text h4 css={{ fontSize: '28px' }}>Contact Us</Text>
-            <Text h6>Dr. K H Lasantha Gunawardana: +94777727527</Text>
-            <Text h6>Shamika Chandupa: +94726645529</Text>
-            <Text h6>Dan Poddiwela: +94771125807</Text>
-            <Text h6>
-              Email: <a href="mailto:lasa_ray@yahoo.com" style={{ color: '#fff' }}>lasa_ray@yahoo.com</a>
-            </Text>
-          </div>
-        </Grid>
-      </Grid.Container>
-
-      {/* Copyright */}
-      <Text h5 css={{ textAlign: 'center', marginTop: '2rem', color: '#fff' }}>
-        &copy; {new Date().getFullYear()} Ray Real Estate. All rights reserved.
-      </Text>
-    </Container>
-  </div>
-);
-
-const MobileFooter = () => (
-  <div
-    style={{
-      width: '100%',
-      backgroundColor: '#4169E1',
-      marginTop: '2rem',
-      padding: '1rem',
-      color: '#fff',
-      textAlign: 'center',
-    }}
-  >
-    <Container>
-        <Image
-                  width={120}
-                  height={120}
-                  src={image}
-                  alt="Default Image"
-                  css={{ objectFit: 'cover' }}
-        />      
-      <Text h6 css={{ fontSize: '16px', marginBottom: '1rem' }}>
-        Part of the Raytronics Group
-      </Text>
-      <Text css={{ fontSize: '16px', marginBottom: '1rem' }}>
-        330/08, Saman Mawatha<br /> Lake Road<br /> Boralesgamuwa
-      </Text>
-      <Text css={{ fontSize: '16px', marginBottom: '1rem' }}>
-        Contact: +94777727527 <br />
-        Email: <a href="mailto:lasa_ray@yahoo.com" style={{ color: '#fff' }}>lasa_ray@yahoo.com</a>
-      </Text>
-
-      {/* Copyright */}
-      <Text h5 css={{ marginTop: '2rem', color: '#fff' }}>
-        &copy; {new Date().getFullYear()} Ray Real Estate. All rights reserved.
-      </Text>
-    </Container>
-  </div>
-);
+import React from 'react';
+import { Container, Row, Col, Text, Link } from '@nextui-org/react';
+import Logo from '../Logo/Logo';
 
 const Footer = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  return (
+    <>
+      <footer style={{
+        background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+        boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.05)',
+        padding: '3rem 0 2rem 0',
+        marginTop: '4rem',
+        borderTop: '1px solid rgba(0, 0, 0, 0.1)'
+      }}>
+        <Container css={{ maxWidth: '100%', padding: 0 }}>
+          <Row justify="center" align="flex-start">
+            {/* Logo Section */}
+            <Col css={{ width: '250px', '@xsMax': { width: '100%', marginBottom: '2rem' } }}>
+              <Link href="https://raytronics.lk" target="_blank" rel="noopener noreferrer">
+                <Logo />
+              </Link>
+              <Text css={{ 
+                color: '#666',
+                marginTop: '1rem',
+                fontSize: '0.9rem'
+              }}>
+                Part of the Raytronics Group
+              </Text>
+              <Text css={{ 
+                color: '#666',
+                marginTop: '0.5rem',
+                fontSize: '0.9rem'
+              }}>
+                330/08, Saman Mawatha<br />
+                Lake Road<br />
+                Boralesgamuwa
+              </Text>
+            </Col>
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+            {/* Quick Links Section */}
+            <Col css={{ width: '250px', '@xsMax': { width: '100%', marginBottom: '2rem' } }}>
+              <Text h4 css={{ marginBottom: '1rem' }}>Quick Links</Text>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/listings">Listings</Link></li>
+                <li><Link href="/about">About Us</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
+                <li><Link href="/faq">FAQ</Link></li>
+              </ul>
+            </Col>
 
-    window.addEventListener('resize', handleResize);
+            {/* Contact Section */}
+            <Col css={{ width: '250px', '@xsMax': { width: '100%' } }}>
+              <Text h4 css={{ marginBottom: '1rem' }}>Contact Us</Text>
+              <div>
+                <Text css={{ marginBottom: '0.5rem' }}>Dr. K H Lasantha Gunawardana</Text>
+                <Text css={{ color: '#666', marginBottom: '1rem' }}>+94777727527</Text>
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+                <Text css={{ marginBottom: '0.5rem' }}>Shamika Chandupa</Text>
+                <Text css={{ color: '#666', marginBottom: '1rem' }}>+94726645529</Text>
 
-  return isMobile ? <MobileFooter /> : <DesktopFooter />;
+                <Text css={{ marginBottom: '0.5rem' }}>Dan Poddiwela</Text>
+                <Text css={{ color: '#666', marginBottom: '1rem' }}>+94771125807</Text>
+
+                <Text css={{ marginBottom: '0.5rem' }}>Email:</Text>
+                <Link href="mailto:lasa_ray@yahoo.com" css={{ color: '#666' }}>
+                  lasa_ray@yahoo.com
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+
+      {/* Business Details Section */}
+      <div style={{
+        background: '#f8f9fa',
+        padding: '1rem 0',
+        borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+        fontSize: '0.8rem',
+        color: '#666'
+      }}>
+        <Container css={{ maxWidth: '100%', padding: 0 }}>
+          <Row css={{ 
+            flexDirection: 'column', 
+            alignItems: 'flex-start', 
+            textAlign: 'left', 
+            gap: '0.5rem'
+          }}>
+            <Text css={{ margin: 0 }}>Business name: Raytronics</Text>
+            <Text css={{ margin: 0 }}>Business Email: lasa_ray@yahoo.com</Text>
+            <Text css={{ margin: 0 }}>Developed by: <Link href="https://codavra.com" target="_blank" rel="noopener noreferrer">Codavra.com</Link></Text>
+            <Text css={{ margin: 0 }}>Developer Email: info@codavra.com</Text>
+            <Text css={{ margin: 0 }}>© {new Date().getFullYear()} Raytronics. All rights reserved.</Text>
+          </Row>
+        </Container>
+      </div>
+    </>
+  );
 };
 
 export default Footer;
