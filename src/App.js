@@ -153,7 +153,6 @@ const AppContent = () => {
           <Route path="/editproperty/:id" element={<AnimatedPage><Editproperty /></AnimatedPage>} />
         </Routes>
       </AnimatePresence>
-      <Footer />
     </>
   );
 };
