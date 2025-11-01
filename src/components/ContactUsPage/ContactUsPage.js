@@ -80,7 +80,7 @@ const ContactUsPage = () => {
                     href="mailto:raytronicspvtltd@gmail.com"
                     style={{ color: "#0070f3", textDecoration: "underline" }}
                   >
-                    raytronicspvtltd@gmail.com
+                    chairman@raytronics.lk
                   </a>
                 </Text>
               </Card.Body>
@@ -107,7 +107,7 @@ const ContactUsPage = () => {
                     href="mailto:danpoddi@gmail.com"
                     style={{ color: "#0070f3", textDecoration: "underline" }}
                   >
-                    danpoddi@gmail.com
+                    sales@raytronics.lk
                   </a>
                 </Text>
               </Card.Body>
@@ -134,7 +134,7 @@ const ContactUsPage = () => {
                     href="mailto:shamika@example.com"
                     style={{ color: "#0070f3", textDecoration: "underline" }}
                   >
-                    shamika@example.com
+                    sales@raytronics.lk
                   </a>
                 </Text>
               </Card.Body>

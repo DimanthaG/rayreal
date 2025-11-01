@@ -100,10 +100,10 @@ const AboutUsPage = () => {
       {/* Company Location */}
       <Text h2 css={{ textAlign: 'center', marginBottom: '1rem' }}>Our Location</Text>
       <Text css={{ textAlign: 'center', marginBottom: '1rem' }}>
-        330/08, Saman Mawatha, Lake Road, Borelesgamuwa
+        86, Old Kottawa Road, Mirihana, Nugegoda, Sri Lanka
       </Text>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4642.265158982494!2d79.91045617566327!3d6.842604393155602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a9b925dae35%3A0x6b0b804d2da025a!2sSaman%20Mawatha%2C%20Boralesgamuwa%2C%20Sri%20Lanka!5e1!3m2!1sen!2sca!4v1736044995629!5m2!1sen!2sca"
+        src="https://www.google.com/maps?q=86+Old+Kottawa+Road+Mirihana+Nugegoda+Sri+Lanka&output=embed"
         title="Google Maps Location"
         style={{
           border: 0,
