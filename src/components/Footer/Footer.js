@@ -31,9 +31,9 @@ const Footer = () => {
                 marginTop: '0.5rem',
                 fontSize: '0.9rem'
               }}>
-                330/08, Saman Mawatha<br />
-                Lake Road<br />
-                Boralesgamuwa
+                86, Old Kottawa Road<br />
+                Mirihana, Nugegoda<br />
+                Sri Lanka
               </Text>
             </Col>
 
@@ -64,7 +64,7 @@ const Footer = () => {
 
                 <Text css={{ marginBottom: '0.5rem' }}>Email:</Text>
                 <Link href="mailto:lasa_ray@yahoo.com" css={{ color: '#666' }}>
-                  lasa_ray@yahoo.com
+                  sales@raytronics.lk
                 </Link>
               </div>
             </Col>
@@ -88,7 +88,7 @@ const Footer = () => {
             gap: '0.5rem'
           }}>
             <Text css={{ margin: 0 }}>Business name: Raytronics</Text>
-            <Text css={{ margin: 0 }}>Business Email: lasa_ray@yahoo.com</Text>
+            <Text css={{ margin: 0 }}>Business Email: chairman@raytronics.lk</Text>
             <Text css={{ margin: 0 }}>Developed by: <Link href="https://codavra.com" target="_blank" rel="noopener noreferrer">Codavra.com</Link></Text>
             <Text css={{ margin: 0 }}>Developer Email: info@codavra.com</Text>
             <Text css={{ margin: 0 }}>© {new Date().getFullYear()} Raytronics. All rights reserved.</Text>

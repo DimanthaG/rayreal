@@ -49,8 +49,8 @@ const SEO = ({
           "logo": "YOUR_LOGO_URL",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "330/08, Saman Mawatha",
-            "addressLocality": "Boralesgamuwa",
+            "streetAddress": "86, Old Kottawa Road",
+            "addressLocality": "Mirihana, Nugegoda",
             "addressRegion": "Western Province",
             "addressCountry": "LK"
           }
