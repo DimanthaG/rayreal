@@ -60,3 +60,18 @@ src/
 Calm, airy layout modelled on the *Dubai Prime Properties* reference (Inter Tight, light headlines,
 pill buttons, soft 32px cards), recoloured to the Ray Realty logo: navy `#0A1250`, powder `#C9D5F7`,
 ice `#F2F5FD`, with the logo red `#C4000F` used only as a small accent. Tokens live in `tailwind.config.js`.
+
+## SEO
+
+- **Per-page tags** (`src/components/Seo.jsx`): title, description, canonical URL, Open Graph / Twitter cards,
+  and JSON-LD structured data — `RealEstateAgent` (every page, in `index.html`), `WebSite` + site search (home),
+  `ItemList` + breadcrumbs (listings), `RealEstateListing` with price, extent and location + breadcrumbs (property),
+  `AboutPage`, `ContactPage`.
+- **Link previews** (`middleware.js`, Vercel Routing Middleware): WhatsApp/Facebook don't run JavaScript, so for
+  `/property/...` the server writes that listing's title, price, description and a 1200×630 crop of the cover
+  photo into the page head. Uses `API_BASE_URL` or `VITE_API_BASE_URL`; falls back to the normal page if the API is slow.
+- **Sitemap**: `/sitemap.xml` is proxied to the API (`vercel.json`), which lists every page and property.
+  `robots.txt` points to it and blocks `/admin` and `/login`. Submit `https://www.rayrealtysl.com/sitemap.xml`
+  in Google Search Console once the domain is live.
+- **Share image** `public/og-image.jpg`, app icons and `manifest.webmanifest` for "Add to home screen".
+- Clean listing URLs with a canonical that keeps only type / district / land use filters.

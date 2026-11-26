@@ -7,7 +7,7 @@ import Counter from 'yet-another-react-lightbox/plugins/counter';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/counter.css';
 import { ArrowLeft, Bath, BedDouble, Check, Copy, Droplets, FileCheck2, Grid2x2, Landmark, Maximize2, Phone, Route, Share2, Tag, Wifi, Zap } from 'lucide-react';
-import Seo from '../components/Seo';
+import Seo, { breadcrumbLd } from '../components/Seo';
 import Spinner from '../components/Spinner';
 import MapEmbed from '../components/MapEmbed';
 import PropertyCard from '../components/PropertyCard';
@@ -17,6 +17,12 @@ import { formatExtent, formatLKR, formatLKRShort, locationLabel, perchesToAcres,
 import { propertyUrl, telLink, whatsappLink } from '../lib/whatsapp';
 import { cld } from '../lib/image';
 import { config } from '../config';
+
+/** 1200×630 crop for link previews (Cloudinary photos only). */
+function shareImage(url) {
+  if (!url || !url.includes('res.cloudinary.com/') || !url.includes('/image/upload/')) return url;
+  return url.replace('/image/upload/', '/image/upload/c_fill,g_auto,w_1200,h_630,f_jpg,q_auto/');
+}
 
 export default function PropertyPage() {
   const { refId } = useParams();
@@ -86,9 +92,29 @@ export default function PropertyPage() {
     name: title,
     url: propertyUrl(p),
     image: images.slice(0, 5).map((i) => cld(i.url, 1200)),
-    description: p.description?.slice(0, 300),
-    offers: p.priceTotal ? { '@type': 'Offer', price: p.priceTotal, priceCurrency: 'LKR', availability: p.status === 'sold' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock' } : undefined,
-    address: { '@type': 'PostalAddress', addressLocality: p.city, addressRegion: p.district, addressCountry: 'LK' },
+    description: p.description?.slice(0, 500),
+    identifier: p.refId,
+    datePosted: p.createdAt || undefined,
+    offers: p.priceTotal
+      ? {
+        '@type': 'Offer',
+        price: p.priceTotal,
+        priceCurrency: 'LKR',
+        availability: p.status === 'sold' ? 'https://schema.org/SoldOut' : p.status === 'reserved' ? 'https://schema.org/LimitedAvailability' : 'https://schema.org/InStock',
+        seller: { '@id': `${config.siteUrl}/#organization` },
+      }
+      : undefined,
+    about: {
+      '@type': 'Place',
+      name: title,
+      address: { '@type': 'PostalAddress', streetAddress: p.address || undefined, addressLocality: p.city || undefined, addressRegion: p.district ? `${p.district} District` : undefined, addressCountry: 'LK' },
+      geo: p.lat != null && p.lng != null ? { '@type': 'GeoCoordinates', latitude: p.lat, longitude: p.lng } : undefined,
+      additionalProperty: [
+        p.extentPerches != null && { '@type': 'PropertyValue', name: 'Land extent', value: p.extentPerches, unitText: 'perches' },
+        p.landUse && { '@type': 'PropertyValue', name: 'Land use', value: p.landUse },
+        p.deedStatus && { '@type': 'PropertyValue', name: 'Deed', value: p.deedStatus },
+      ].filter(Boolean),
+    },
   };
 
   return (
@@ -96,10 +122,10 @@ export default function PropertyPage() {
       <Seo
         title={`${title} — ${price.main}${price.unit ? ' per perch' : ''}`}
         description={`${p.propertyType} for sale in ${where}. ${p.extentPerches ? `${formatExtent(p.extentPerches)}. ` : ''}${p.description?.replace(/\s+/g, ' ')}`}
-        image={cld(images[0]?.url, 1200)}
+        image={shareImage(images[0]?.url)}
         path={propertyPath(p)}
         type="article"
-        jsonLd={jsonLd}
+        jsonLd={[jsonLd, breadcrumbLd([['Home', '/'], ['Properties', '/listings'], [p.district ? `${p.district}` : 'Sri Lanka', `/listings${p.district ? `?district=${encodeURIComponent(p.district)}` : ''}`], [title, propertyPath(p)]])]}
       />
 
       <div className="container-x pt-6">

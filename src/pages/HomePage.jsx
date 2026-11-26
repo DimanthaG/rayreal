@@ -11,6 +11,7 @@ import BrandArt from '../components/BrandArt';
 import { filterProperties, useProperties } from '../hooks/useProperties';
 import { formatExtent, formatLKR, locationLabel, priceParts, propertyPath } from '../lib/format';
 import { telLink, whatsappLink } from '../lib/whatsapp';
+import { config } from '../config';
 
 function toQuery(f) {
   const qs = new URLSearchParams();
@@ -47,7 +48,21 @@ export default function HomePage() {
 
   return (
     <>
-      <Seo path="/" jsonLd={{ '@context': 'https://schema.org', '@type': 'RealEstateAgent', name: 'Ray Realty', url: 'https://www.rayrealtysl.com', telephone: '+94777727527', address: { '@type': 'PostalAddress', streetAddress: '86, Old Kottawa Road', addressLocality: 'Mirihana, Nugegoda', addressCountry: 'LK' } }} />
+      <Seo
+        path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Ray Realty',
+          url: `${config.siteUrl}/`,
+          publisher: { '@id': `${config.siteUrl}/#organization` },
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: { '@type': 'EntryPoint', urlTemplate: `${config.siteUrl}/listings?q={search_term_string}` },
+            'query-input': 'required name=search_term_string',
+          },
+        }}
+      />
 
       {/* ───────── Hero (logo blue) ───────── */}
       <section className="container-x pt-4">
@@ -94,16 +109,16 @@ export default function HomePage() {
               </Link>
             ) : (
               <div className="absolute inset-0 flex flex-col justify-between bg-powder p-6 sm:p-10">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="grid grid-cols-3 gap-6 sm:gap-10">
+                <div>
+                  <span className="chip bg-white text-navy">{loading ? 'Loading…' : 'New listings coming soon'}</span>
+                  <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
                     {[['30+', 'years'], ['5+', 'group companies'], ['10K+', 'clients']].map(([v, k]) => (
-                      <div key={k}>
-                        <div className="text-4xl font-light tracking-tight text-navy sm:text-5xl">{v}</div>
-                        <div className="mt-1 text-xs text-navy/60 sm:text-sm">{k}</div>
+                      <div key={k} className="min-w-0">
+                        <div className="whitespace-nowrap text-4xl font-light tracking-tight text-navy xl:text-5xl">{v}</div>
+                        <div className="mt-1 whitespace-nowrap text-xs text-navy/60 sm:text-sm">{k}</div>
                       </div>
                     ))}
                   </div>
-                  <span className="chip hidden shrink-0 bg-white text-navy sm:inline-flex">{loading ? 'Loading…' : 'New listings coming soon'}</span>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {[

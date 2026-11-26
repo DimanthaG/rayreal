@@ -1,5 +1,6 @@
 import { ArrowUpRight, Award, Compass, Handshake, ShieldCheck } from 'lucide-react';
-import Seo from '../components/Seo';
+import Seo, { breadcrumbLd } from '../components/Seo';
+import { config } from '../config';
 import ContactBlock from '../components/ContactBlock';
 import BrandArt from '../components/BrandArt';
 import { Reveal } from '../components/ui';
@@ -29,6 +30,10 @@ export default function AboutPage() {
         title="About us"
         path="/about"
         description="Ray Realty is the real estate company of the Raytronics Group — a Sri Lankan group founded in 1993 with 30+ years of experience across gems, real estate, education and retail."
+        jsonLd={[
+          breadcrumbLd([['Home', '/'], ['About us', '/about']]),
+          { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'About Ray Realty', url: `${config.siteUrl}/about`, about: { '@id': `${config.siteUrl}/#organization` } },
+        ]}
       />
 
       {/* Hero */}

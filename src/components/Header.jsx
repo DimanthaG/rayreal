@@ -6,9 +6,8 @@ import { Logo, WhatsAppIcon } from './ui';
 import { telLink, whatsappLink } from '../lib/whatsapp';
 
 const NAV = [
+  { to: '/', label: 'Home' },
   { to: '/listings', label: 'Properties' },
-  { to: '/listings?type=Land', label: 'Land' },
-  { to: '/listings?type=House', label: 'Houses' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -32,9 +31,9 @@ export default function Header() {
   }, [open]);
 
   const isActive = (to) => {
-    const [path, qs] = to.split('?');
-    if (qs) return location.pathname === path && location.search.includes(qs);
-    return location.pathname.startsWith(path) && !(path === '/listings' && /type=/.test(location.search));
+    if (to === '/') return location.pathname === '/';
+    if (to === '/listings') return location.pathname.startsWith('/listings') || location.pathname.startsWith('/property/');
+    return location.pathname.startsWith(to);
   };
 
   return (
@@ -46,7 +45,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
           {NAV.map((n) => (
-            <NavLink key={n.to} to={n.to} className={clsx('text-[14px] transition-colors hover:text-navy', isActive(n.to) ? 'text-navy' : 'text-muted')}>
+            <NavLink key={n.to} to={n.to} end={n.to === '/'} aria-current={isActive(n.to) ? 'page' : undefined} className={clsx('relative py-1 text-[14px] transition-colors hover:text-navy', isActive(n.to) ? 'font-medium text-navy after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-navy' : 'text-muted')}>
               {n.label}
             </NavLink>
           ))}
@@ -78,7 +77,8 @@ export default function Header() {
               <Link
                 key={n.to}
                 to={n.to}
-                className="animate-rise border-b border-line py-5 text-3xl font-light tracking-tight text-ink"
+                aria-current={isActive(n.to) ? 'page' : undefined}
+                className={clsx('animate-rise border-b border-line py-5 text-3xl font-light tracking-tight', isActive(n.to) ? 'text-navy' : 'text-ink')}
                 style={{ animationDelay: `${i * 50}ms` }}
               >
                 {n.label}

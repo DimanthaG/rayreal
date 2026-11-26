@@ -165,10 +165,10 @@ export default function ImageUploader({ value, onChange, onRemove, onBusyChange 
 
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/55 to-transparent p-2">
                   <div className="flex gap-1">
-                    <button type="button" onClick={() => move(i, i - 1)} disabled={i === 0} className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-ink disabled:opacity-40" aria-label="Move left"><ArrowLeft className="h-3.5 w-3.5" /></button>
-                    <button type="button" onClick={() => move(i, i + 1)} disabled={i === value.length - 1} className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-ink disabled:opacity-40" aria-label="Move right"><ArrowRight className="h-3.5 w-3.5" /></button>
+                    <button type="button" onClick={() => move(i, i - 1)} disabled={i === 0} className="grid h-9 w-9 place-items-center rounded-full bg-white/90 text-ink disabled:opacity-40 sm:h-8 sm:w-8" aria-label="Move left"><ArrowLeft className="h-3.5 w-3.5" /></button>
+                    <button type="button" onClick={() => move(i, i + 1)} disabled={i === value.length - 1} className="grid h-9 w-9 place-items-center rounded-full bg-white/90 text-ink disabled:opacity-40 sm:h-8 sm:w-8" aria-label="Move right"><ArrowRight className="h-3.5 w-3.5" /></button>
                   </div>
-                  <button type="button" onClick={() => remove(i)} className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-brand-red" aria-label={`Remove photo ${i + 1}`}><Trash2 className="h-3.5 w-3.5" /></button>
+                  <button type="button" onClick={() => remove(i)} className="grid h-9 w-9 place-items-center rounded-full bg-white/90 text-brand-red sm:h-8 sm:w-8" aria-label={`Remove photo ${i + 1}`}><Trash2 className="h-3.5 w-3.5" /></button>
                 </div>
               </li>
             );

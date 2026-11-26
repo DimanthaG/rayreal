@@ -117,7 +117,7 @@ function Chip({ children, onClear }) {
   return (
     <span className="chip bg-powder-soft text-navy">
       {children}
-      <button type="button" onClick={onClear} aria-label={`Remove ${children}`} className="-mr-1 rounded-full p-0.5 hover:bg-white">
+      <button type="button" onClick={onClear} aria-label={`Remove ${children}`} className="-my-1 -mr-1.5 rounded-full p-1.5 hover:bg-white">
         <X className="h-3 w-3" />
       </button>
     </span>

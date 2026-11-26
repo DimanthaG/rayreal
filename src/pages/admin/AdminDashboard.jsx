@@ -148,7 +148,55 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-3 p-6 text-sm text-brand-red"><AlertTriangle className="h-4 w-4" />{error}<button type="button" onClick={load} className="underline">Retry</button></div>
         )}
 
-        <div className="overflow-x-auto">
+        {/* Phones: cards with status + featured controls visible */}
+        <ul className="divide-y divide-line md:hidden">
+          {loading && Array.from({ length: 4 }, (_, i) => <li key={i} className="p-4"><div className="h-16 animate-pulse rounded-xl bg-ice" /></li>)}
+          {!loading && rows.map((p) => {
+            const price = priceParts(p);
+            return (
+              <li key={p.refId} className={clsx('p-4', busy[p.refId] && 'opacity-60')}>
+                <Link to={`/admin/properties/${p.refId}`} className="flex gap-3">
+                  <Img src={p.images?.[0]?.url} w={200} className="h-16 w-20 shrink-0 rounded-xl" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-[15px] font-medium text-ink">{p.title}</span>
+                    <span className="block text-xs text-muted">{p.refId} · {[p.city, p.district].filter(Boolean).join(', ') || 'No district'}</span>
+                    <span className={clsx('mt-0.5 block text-sm', price.onRequest ? 'text-muted' : 'text-navy')}>{price.unit ? `${formatLKRShort(p.pricePerPerch)} / perch` : price.main}</span>
+                  </span>
+                </Link>
+                <div className="mt-3 flex items-center gap-2">
+                  <label className="relative">
+                    <select
+                      value={p.status}
+                      disabled={busy[p.refId]}
+                      onChange={(e) => patch(p, { status: e.target.value }, `${p.refId} marked ${e.target.value}`)}
+                      className={clsx('h-9 cursor-pointer appearance-none rounded-full pl-3 pr-8 text-xs font-medium capitalize outline-none ring-1', STATUS_STYLE[p.status])}
+                      aria-label={`Status of ${p.refId}`}
+                    >
+                      {STATUSES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
+                    </select>
+                    <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 opacity-60" />
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => patch(p, { featured: !p.featured }, p.featured ? `${p.refId} removed from featured` : `${p.refId} is now featured`)}
+                    disabled={busy[p.refId]}
+                    aria-pressed={!!p.featured}
+                    className={clsx('flex h-9 items-center gap-1.5 rounded-full px-3 text-xs font-medium ring-1', p.featured ? 'bg-navy text-white ring-navy' : 'bg-white text-muted ring-line')}
+                  >
+                    <Star className="h-3.5 w-3.5" /> {p.featured ? 'Featured' : 'Feature'}
+                  </button>
+                  <div className="ml-auto flex gap-1">
+                    <Link to={`/admin/properties/${p.refId}`} className="grid h-9 w-9 place-items-center rounded-full bg-ice text-navy" aria-label={`Edit ${p.refId}`}><Pencil className="h-4 w-4" /></Link>
+                    <button type="button" onClick={() => setConfirm(p)} className="grid h-9 w-9 place-items-center rounded-full bg-ice text-brand-red" aria-label={`Delete ${p.refId}`}><Trash2 className="h-4 w-4" /></button>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+          {!loading && !rows.length && <li className="px-4 py-14 text-center text-sm text-muted">No listings here yet.</li>}
+        </ul>
+
+        <div className="hidden overflow-x-auto md:block">
           <table className="w-full min-w-[880px] text-sm">
             <thead>
               <tr className="text-left text-xs uppercase tracking-wide text-muted">

@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /login
+
+Sitemap: https://www.rayrealtysl.com/sitemap.xml

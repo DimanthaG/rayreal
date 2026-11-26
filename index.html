@@ -2,17 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#00084C" />
-    <title>Ray Realty — Land &amp; property for sale in Sri Lanka</title>
-    <meta name="description" content="Ray Realty lists verified land, houses and commercial property across Sri Lanka. Clear prices in LKR, extent in perches and one-tap WhatsApp enquiries." />
+
+    <!-- Defaults. Each page replaces these (react-helmet-async, data-rh); property pages are also
+         filled in on the server by middleware.js so link previews work on WhatsApp and Facebook. -->
+    <title>Ray Realty — Land &amp; Property for Sale in Sri Lanka</title>
+    <meta data-rh="true" name="description" content="Buy land, houses and commercial property across Sri Lanka with Ray Realty, a Raytronics Group company. Prices in LKR, extent in perches, clear deeds and instant WhatsApp enquiries." />
+    <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large" />
+    <link data-rh="true" rel="canonical" href="https://www.rayrealtysl.com/" />
+    <meta data-rh="true" property="og:site_name" content="Ray Realty" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:locale" content="en_LK" />
+    <meta data-rh="true" property="og:title" content="Ray Realty — Land &amp; Property for Sale in Sri Lanka" />
+    <meta data-rh="true" property="og:description" content="Verified land, houses and commercial property across Sri Lanka. Prices in LKR, extent in perches, clear deeds." />
+    <meta data-rh="true" property="og:url" content="https://www.rayrealtysl.com/" />
+    <meta data-rh="true" property="og:image" content="https://www.rayrealtysl.com/og-image.jpg" />
+    <meta data-rh="true" property="og:image:width" content="1200" />
+    <meta data-rh="true" property="og:image:height" content="630" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:title" content="Ray Realty — Land &amp; Property for Sale in Sri Lanka" />
+    <meta data-rh="true" name="twitter:description" content="Verified land, houses and commercial property across Sri Lanka." />
+    <meta data-rh="true" name="twitter:image" content="https://www.rayrealtysl.com/og-image.jpg" />
+    <meta name="geo.region" content="LK" />
+    <meta name="geo.placename" content="Nugegoda, Sri Lanka" />
+
+    <!-- Organisation details for search engines (stays on every page) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "@id": "https://www.rayrealtysl.com/#organization",
+        "name": "Ray Realty",
+        "url": "https://www.rayrealtysl.com/",
+        "logo": "https://www.rayrealtysl.com/logo.png",
+        "image": "https://www.rayrealtysl.com/og-image.jpg",
+        "description": "Real estate company of the Raytronics Group — land, houses and commercial property across Sri Lanka.",
+        "telephone": "+94777727527",
+        "email": "sales@raytronics.lk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "86, Old Kottawa Road, Mirihana",
+          "addressLocality": "Nugegoda",
+          "addressCountry": "LK"
+        },
+        "areaServed": { "@type": "Country", "name": "Sri Lanka" },
+        "parentOrganization": { "@type": "Organization", "name": "Raytronics Group", "url": "https://www.raytronics.lk/", "foundingDate": "1993" },
+        "sameAs": [
+          "https://www.facebook.com/share/1HU1zpDerz/",
+          "https://www.instagram.com/raytronics_lanka",
+          "https://www.tiktok.com/@raytronics_sl"
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-white text-ink antialiased">
     <div id="root"></div>
+    <noscript>
+      <h1>Ray Realty — Land &amp; Property for Sale in Sri Lanka</h1>
+      <p>Ray Realty, a Raytronics Group company, lists verified land, houses and commercial property across Sri Lanka.
+        Call +94 77 772 7527 or email sales@raytronics.lk. 86, Old Kottawa Road, Mirihana, Nugegoda.</p>
+      <p><a href="/listings">Browse properties</a> · <a href="/about">About us</a> · <a href="/contact">Contact</a></p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

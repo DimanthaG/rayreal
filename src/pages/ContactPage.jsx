@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
-import Seo from '../components/Seo';
+import Seo, { breadcrumbLd } from '../components/Seo';
 import ContactBlock from '../components/ContactBlock';
 import { WhatsAppIcon } from '../components/ui';
 import { useProperties } from '../hooks/useProperties';
@@ -13,7 +13,24 @@ export default function ContactPage() {
   const pretty = prettyPhone;
   return (
     <>
-      <Seo title="Contact us" path="/contact" description="Call, WhatsApp or visit Ray Realty at 86, Old Kottawa Road, Mirihana, Nugegoda." />
+      <Seo
+        title="Contact us"
+        path="/contact"
+        description="Call, WhatsApp or visit Ray Realty at 86, Old Kottawa Road, Mirihana, Nugegoda. Property sales: +94 77 772 7527 · sales@raytronics.lk"
+        jsonLd={[
+          breadcrumbLd([['Home', '/'], ['Contact', '/contact']]),
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact Ray Realty',
+            url: `${config.siteUrl}/contact`,
+            mainEntity: {
+              '@id': `${config.siteUrl}/#organization`,
+              contactPoint: company.contacts.map((c) => ({ '@type': 'ContactPoint', telephone: c.phone, contactType: 'sales', areaServed: 'LK', availableLanguage: ['English', 'Sinhala'] })),
+            },
+          },
+        ]}
+      />
       <section className="container-x pb-14 pt-14 sm:pt-20">
         <span className="eyebrow">Contact</span>
         <h1 className="display mt-3 max-w-3xl text-[38px] leading-[1.05] sm:text-6xl">Let's find the right property, <span className="soft">together.</span></h1>
