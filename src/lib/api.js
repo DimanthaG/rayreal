@@ -25,6 +25,12 @@ export function setTokenProvider(fn) {
 /** Current admin's Firebase ID token (refreshed automatically by Firebase). */
 export const getAuthToken = () => tokenProvider();
 
+/** Wakes the API (Render free plan sleeps when idle) as soon as the site opens. Fire-and-forget. */
+export function wakeApi() {
+  if (isDemo) return;
+  fetch(`${config.apiBaseUrl}/health`, { cache: 'no-store' }).catch(() => {});
+}
+
 export class ApiError extends Error {
   constructor(message, status) {
     super(message);

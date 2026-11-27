@@ -1,28 +1,74 @@
 import { useEffect, useState } from 'react';
 import { getProperty, listProperties } from '../lib/api';
 
-// Small in-memory cache so moving between pages feels instant.
-let cache = null;
+// Listings are cached in memory and in the browser (localStorage), so returning visitors see
+// properties instantly — even while the API is waking up — and fresh data replaces them a moment later.
+const STORE_KEY = 'rr-listings-v1';
+const MAX_AGE = 7 * 24 * 3600 * 1000;
+
+function readStore() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
+    if (raw && Array.isArray(raw.items) && Date.now() - raw.at < MAX_AGE) return raw.items;
+  } catch {
+    /* storage blocked or corrupt */
+  }
+  return null;
+}
+function writeStore(items) {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify({ at: Date.now(), items }));
+  } catch {
+    /* quota or blocked — memory cache still works */
+  }
+}
+
+let cache = readStore();
+let fresh = false; // has this page load fetched from the API yet?
 let inflight = null;
 
 export function invalidatePropertyCache() {
   cache = null;
+  fresh = false;
+  try {
+    localStorage.removeItem(STORE_KEY);
+  } catch {
+    /* ignore */
+  }
 }
 
 export function useProperties() {
-  const [state, setState] = useState({ items: cache || [], loading: !cache, error: null });
+  // `loading` is only true when there is nothing to show yet; `refreshing` while updating cached data.
+  const [state, setState] = useState({ items: cache || [], loading: !cache, refreshing: !!cache && !fresh, error: null });
   useEffect(() => {
+    if (fresh && cache) return undefined;
     let alive = true;
     if (!inflight) inflight = listProperties().finally(() => { inflight = null; });
     inflight
       .then((items) => {
         cache = items;
-        if (alive) setState({ items, loading: false, error: null });
+        fresh = true;
+        writeStore(items);
+        if (alive) setState({ items, loading: false, refreshing: false, error: null });
       })
-      .catch((error) => alive && setState((s) => ({ ...s, loading: false, error })));
+      .catch((error) => alive && setState((s) => ({ ...s, loading: false, refreshing: false, error: s.items.length ? null : error })));
     return () => { alive = false; };
   }, []);
   return state;
+}
+
+/** True once `active` has been true for `ms` — used to explain a slow first load. */
+export function useSlow(active, ms = 4000) {
+  const [slow, setSlow] = useState(false);
+  useEffect(() => {
+    if (!active) {
+      setSlow(false);
+      return undefined;
+    }
+    const t = setTimeout(() => setSlow(true), ms);
+    return () => clearTimeout(t);
+  }, [active, ms]);
+  return slow;
 }
 
 export function useProperty(refId) {

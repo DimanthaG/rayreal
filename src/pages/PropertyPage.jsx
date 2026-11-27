@@ -12,7 +12,7 @@ import Spinner from '../components/Spinner';
 import MapEmbed from '../components/MapEmbed';
 import PropertyCard from '../components/PropertyCard';
 import { EmptyState, Img, StatusBadge, WhatsAppIcon } from '../components/ui';
-import { useProperties, useProperty } from '../hooks/useProperties';
+import { useProperties, useProperty, useSlow } from '../hooks/useProperties';
 import { formatExtent, formatLKR, formatLKRShort, locationLabel, perchesToAcres, priceParts, propertyPath } from '../lib/format';
 import { propertyUrl, telLink, whatsappLink } from '../lib/whatsapp';
 import { cld } from '../lib/image';
@@ -27,6 +27,7 @@ function shareImage(url) {
 export default function PropertyPage() {
   const { refId } = useParams();
   const { item: p, loading, error } = useProperty(refId);
+  const slow = useSlow(loading && !p);
   const { items } = useProperties();
   const [lightbox, setLightbox] = useState(-1);
   const [copied, setCopied] = useState(false);
@@ -41,7 +42,7 @@ export default function PropertyPage() {
       .map((s) => s.x);
   }, [items, p]);
 
-  if (loading && !p) return <Spinner full label="Loading property" />;
+  if (loading && !p) return <Spinner full label={slow ? 'Loading property — the first visit can take up to a minute…' : 'Loading property'} />;
   if (error || !p) {
     return (
       <div className="container-x py-24">

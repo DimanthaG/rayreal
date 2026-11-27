@@ -8,7 +8,8 @@ import PropertyCard, { PropertyCardSkeleton } from '../components/PropertyCard';
 import ContactBlock from '../components/ContactBlock';
 import { ArrowLink, EmptyState, Img, Reveal, SectionHead, WhatsAppIcon } from '../components/ui';
 import BrandArt from '../components/BrandArt';
-import { filterProperties, useProperties } from '../hooks/useProperties';
+import { filterProperties, useProperties, useSlow } from '../hooks/useProperties';
+import SlowNotice from '../components/SlowNotice';
 import { formatExtent, formatLKR, locationLabel, priceParts, propertyPath } from '../lib/format';
 import { telLink, whatsappLink } from '../lib/whatsapp';
 import { config } from '../config';
@@ -21,6 +22,7 @@ function toQuery(f) {
 
 export default function HomePage() {
   const { items, loading } = useProperties();
+  const slow = useSlow(loading);
   const navigate = useNavigate();
   const [filters, setFilters] = useState({});
 
@@ -158,6 +160,7 @@ export default function HomePage() {
       {/* ───────── Latest ───────── */}
       <section className="container-x py-20 sm:py-28">
         <SectionHead eyebrow="Latest listings" title="New on Ray Realty," soft="checked before they go live." action={<ArrowLink to="/listings">See all properties</ArrowLink>} />
+        {slow && <SlowNotice className="mt-8" />}
         {!loading && latest.length === 0 ? (
           <div className="mt-12">
             <EmptyState

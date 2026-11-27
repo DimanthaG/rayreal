@@ -7,6 +7,9 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { AuthProvider } from './context/AuthContext';
 import { config } from './config';
 import './index.css';
+import { wakeApi } from './lib/api';
+
+wakeApi();
 
 const Router = config.memoryRouter ? MemoryRouter : config.hashRouter ? HashRouter : BrowserRouter;
 

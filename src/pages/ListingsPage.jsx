@@ -8,7 +8,8 @@ import { cld } from '../lib/image';
 import FilterBar from '../components/FilterBar';
 import PropertyCard, { PropertyCardSkeleton } from '../components/PropertyCard';
 import { EmptyState } from '../components/ui';
-import { filterProperties, useProperties } from '../hooks/useProperties';
+import { filterProperties, useProperties, useSlow } from '../hooks/useProperties';
+import SlowNotice from '../components/SlowNotice';
 import { SORTS } from '../lib/options';
 import clsx from 'clsx';
 
@@ -42,6 +43,7 @@ export default function ListingsPage() {
   const [sp, setSp] = useSearchParams();
   const filters = useMemo(() => readFilters(sp), [sp]);
   const { items, loading, error } = useProperties();
+  const slow = useSlow(loading);
   const [shown, setShown] = useState(PAGE);
 
   const setFilters = (f) => {
@@ -142,6 +144,7 @@ export default function ListingsPage() {
           </div>
         </div>
 
+        {slow && <SlowNotice className="mb-6" />}
         {error && <EmptyState title="We couldn't load properties">{error.message}</EmptyState>}
 
         {!error && (
